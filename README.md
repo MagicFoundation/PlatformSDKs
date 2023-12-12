@@ -1,27 +1,28 @@
 ANDROID
 -------
+ 
+* Install OpenJDK Binaries 8 and 11. 
+  https://adoptium.net/
+  Download the Windows installer (msi) for 
+    * Operating System: Windows 
+    * Architecture: x64 
+    * Package Type: jdk 
+    * Version: 8 then 11
+  and then just run the installation. In the install dialog select only:
+    * Update path (only for the version 8)
+    * Associate .jar (only for the version 8)
+    * Set JAVA_HOME variable (only for the version 8)
 
-https://adoptium.net/
-Download the Windows installer (msi) for 
-Operating System: Windows 
-Architecture: x64 
-Package Type: jdk 
-Version: 8 
-and then just run the installation. In the install dialog select only:
-* Update path
-* Associate .jar
-* Set JAVA_HOME variable
+* download the last Command line tools from:
+  https:developer.android.com/studio#command-tools
+  Or use the one located in (if already installed)
+  {MagicFoundation}\PlatformSDKs\android\cmdline-tools\9.0\bin
 
-download the last Command line tools from:
-https:developer.android.com/studio#command-tools
-Or use the one located in (if already installed)
-c:\Dev\MagicFoundation\PlatformSDKs\android\cmdline-tools\8.0\bin
+* To list installed and available packages:
+  "c:\Dev\MagicFoundation\PlatformSDKs\android\cmdline-tools\9.0\bin\sdkmanager.bat" --sdk_root=c:\Dev\MagicFoundation\PlatformSDKs\android\ --list
 
-To list installed and available packages:
-"c:\Dev\MagicFoundation\PlatformSDKs\android\cmdline-tools\8.0\bin\sdkmanager.bat" --sdk_root=c:\Dev\MagicFoundation\PlatformSDKs\android\ --list
-
-To reinstall from scratch all the android SDK/NDK:
-"c:\Dev\MagicFoundation\PlatformSDKs\android\cmdline-tools\8.0\bin\sdkmanager.bat"^
+* To reinstall from scratch all the android SDK/NDK:
+"c:\Dev\MagicFoundation\PlatformSDKs\android\cmdline-tools\9.0\bin\sdkmanager.bat"^
  "build-tools;29.0.3"^
  "build-tools;30.0.3"^
  "build-tools;32.0.0"^
@@ -65,26 +66,35 @@ To reinstall from scratch all the android SDK/NDK:
  "sources;android-34"^
  --sdk_root=c:\Dev\MagicFoundation\PlatformSDKs\android\
 
-to create an emulator:
-"c:\Dev\MagicFoundation\PlatformSDKs\android\cmdline-tools\8.0\bin\avdmanager.bat" create avd -n android13 -k "system-images;android-33;google_apis;arm64-v8a"
-but this fail: 
-https://stackoverflow.com/questions/74760027/exception-during-avdmanager-initialization
-https://github.com/ReactiveCircus/android-emulator-runner/issues/235
+* to create an emulator (not work anymore on Intel):
+  "c:\Dev\MagicFoundation\PlatformSDKs\android\cmdline-tools\9.0\bin\avdmanager.bat" create avd -n android13 -k "system-images;android-33;google_apis;arm64-v8a"
+  but this fail: 
+  https://stackoverflow.com/questions/74760027/exception-during-avdmanager-initialization
+  https://github.com/ReactiveCircus/android-emulator-runner/issues/235
  
  
 IOS
 ---
 
-* Install lastest macOS (Big Sur?) on a VMWare instance and forget virtualbox, it's just a #@{^}
-* In the macOS, from the app store, install XCode
-* In the macOS install c:\Program Files (x86)\Embarcadero\Studio\23.0\PAServer\PAServer23.0.pkg
+* Install the lastest macOS on a VMWare instance. 
+  Follow the instructions: {MagicFoundation}\Softwares\MacOS\README.md
+* In the macOS, from the app store, install XCode. You will need to 
+  enter your your apple ID email and password. 
+* Launch XCode and select macOS and iOS plateform
+* Install in Macos: c:\Program Files (x86)\Embarcadero\Studio\23.0\PAServer\PAServer23.0.pkg
+* Go in Finder > Applications > right click on PAServer 23 icon and select Open. if you receive
+  the error message saying "PAServer 23 damaged and cannot be opened" then click again on the 
+  "Open" button (Temporarily bypass security features by right-clicking the app and selecting Open twice)
+  https://iboysoft.com/news/app-is-damaged-and-cannot-be-opened.html
+* Go in Finder > Applications > drag and drop PAServer-23 icon to the desktop to create a short link
+* Launch PAServer-23
 
-* In the Keychain Access application on your Mac, select from the Keychain Access menu: 
-  Certificate Assistant > Request a Certificate From a Certificate Authority:
-    User Email Address: apple@kiskis.club
-    Common name: developer.apple.com
-    CA Email Address: {leaveEmpty} 
-    Save to Disk: {Checked}
+* Finder > Applications > Utilities > Keychain Access (select Open Keychain Access in popup dialog)
+* Menu > Keychain Access > Certificate Assistant > Request a Certificate From a Certificate Authority:
+    * User Email Address: {Your apple ID Email}
+    * Common name: developer.apple.com
+    * CA Email Address: {leaveEmpty} 
+    * Save to Disk: {Checked}
   then save the certificate somewhere on the disk
   
 * Go to https://developer.apple.com/account/resources/certificates/list and click (+) to add a new certificate
@@ -92,7 +102,9 @@ IOS
 * select the certificate previously saved
 * download the new certificate
 * Launch the Development Certificate by double-clicking it. It automatically loads in the Keychain Access application.
-* If you get "certificate is not trusted" red warning in keychain when looking the new installed certificate then: https://developer.apple.com/forums/thread/662300
+* in the "add certificates" popup dialog select "login" Keychain
+* If you get "certificate is not trusted" red warning in keychain when looking the new installed certificate then install
+  also this certificate: https://www.apple.com/certificateauthority/AppleWWDRCAG3.cer
 
 * Go to https://developer.apple.com/account/resources/certificates/list and click (+) to add a new certificate
 * select iOS Distribution (App Store and Ad Hoc)
@@ -109,8 +121,8 @@ IOS
 * Go to https://developer.apple.com/account/resources/identifiers/list and click (+) to add a new profile
 * Select App IDs
 * Select App
-* Description: KisKis iOS App
-  Bundle ID: club.kiskis.app.ios (explicit)
+* Description: {AppName} iOS App
+  Bundle ID: {Domain in lowercase}.{AppName in lowercase}.app.ios (explicit)
   Associated Domains: YES
   Sign In with Apple: YES (Enable as a primary App ID)
   Push Notifications: YES
@@ -119,7 +131,7 @@ IOS
 * Select iOS App Development
 * Select XC Wildcard
 * Select All Certificate
-* ....
+* Name it XC Wildcard (development)
 * Download your new provisioning profile
 * Double click on it to install it
 * Verify that the provisioning profile is well installed in /Users/zeus/Library/MobileDevice/Provisioning Profiles/
@@ -136,8 +148,6 @@ IOS
 
 Configure Delphi to use the framework SDKs
 ------------------------------------------
-
-* Download and Install OpenJDK11U-jdk_x64_windows_hotspot_11.0.16.1_1 (or newer)
 
 * Tools > Options > Environment Variables > User overrides
       > New
@@ -158,19 +168,27 @@ Configure Delphi to use the framework SDKs
 
 * Tools > Options > Deployment > SDK Manager
       > Add
-      > macOS 64 bit     
+      > macOS 64 bit   
+      > if the Connection with Delphi <-> MacOS PAServer is very slow take a look at 
+        https://quality.embarcadero.com/browse/RSP-41260 
       
 *  Tools > Options > Deployment > SDK Manager
       > Add
       > macOS ARM 64 bit      
+      > if the Connection with Delphi <-> MacOS PAServer is very slow take a look at 
+        https://quality.embarcadero.com/browse/RSP-41260 
       
 *  Tools > Options > Deployment > SDK Manager
       > Add
       > iOS Simulator ARM 64 bit      
+      > if the Connection with Delphi <-> MacOS PAServer is very slow take a look at 
+        https://quality.embarcadero.com/browse/RSP-41260 
       
 *  Tools > Options > Deployment > SDK Manager
       > Add
       > iOS device 64 bit    
+      > if the Connection with Delphi <-> MacOS PAServer is very slow take a look at 
+        https://quality.embarcadero.com/browse/RSP-41260 
         
 *  Tools > Options > Deployment > SDK Manager
       > Add
@@ -251,9 +269,9 @@ Configure Delphi to use the framework SDKs
 
       https://quality.embarcadero.com/browse/RSP-38700
       You will need to manually copy the content of (assuming c:\Dev\MagicFoundation\PlatformSDKs is your BDSPLATFORMSDKSDIR)
-      c:\Dev\MagicFoundation\PlatformSDKs\iPhoneOS16.4.sdk\Applications\Xcode.app\Contents\Developer\Toolchains\XcodeDefault.xctoolchain\usr\lib\swift  to  c:\Dev\MagicFoundation\PlatformSDKs\iPhoneOS16.1.sdk\usr\lib\swift
-      c:\Dev\MagicFoundation\PlatformSDKs\iPhoneOS16.4.sdk\Applications\Xcode.app\Contents\Developer\Toolchains\XcodeDefault.xctoolchain\usr\lib\swift-5.0  to  c:\Dev\MagicFoundation\PlatformSDKs\iPhoneOS16.1.sdk\usr\lib\swift-5.0
-      c:\Dev\MagicFoundation\PlatformSDKs\iPhoneOS16.4.sdk\Applications\Xcode.app\Contents\Developer\Toolchains\XcodeDefault.xctoolchain\usr\lib\swift-5.5  to  c:\Dev\MagicFoundation\PlatformSDKs\iPhoneOS16.1.sdk\usr\lib\swift-5.5
+      c:\Dev\MagicFoundation\PlatformSDKs\iPhoneOS17.0.sdk\Applications\Xcode.app\Contents\Developer\Toolchains\XcodeDefault.xctoolchain\usr\lib\swift  to  c:\Dev\MagicFoundation\PlatformSDKs\iPhoneOS16.1.sdk\usr\lib\swift
+      c:\Dev\MagicFoundation\PlatformSDKs\iPhoneOS17.0.sdk\Applications\Xcode.app\Contents\Developer\Toolchains\XcodeDefault.xctoolchain\usr\lib\swift-5.0  to  c:\Dev\MagicFoundation\PlatformSDKs\iPhoneOS16.1.sdk\usr\lib\swift-5.0
+      c:\Dev\MagicFoundation\PlatformSDKs\iPhoneOS17.0.sdk\Applications\Xcode.app\Contents\Developer\Toolchains\XcodeDefault.xctoolchain\usr\lib\swift-5.5  to  c:\Dev\MagicFoundation\PlatformSDKs\iPhoneOS16.1.sdk\usr\lib\swift-5.5
 
 
 |  (In case you need to downgrade iOS SDK)
