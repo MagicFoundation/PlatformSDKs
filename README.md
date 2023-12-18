@@ -90,6 +90,7 @@ IOS
 * Launch PAServer-23
 
 * Finder > Applications > Utilities > Keychain Access (select Open Keychain Access in popup dialog)
+* Select "System" keychain in the left panel
 * Menu > Keychain Access > Certificate Assistant > Request a Certificate From a Certificate Authority:
     * User Email Address: {Your apple ID Email}
     * Common name: developer.apple.com
@@ -101,8 +102,9 @@ IOS
 * select iOS App Development
 * select the certificate previously saved
 * download the new certificate
-* Launch the Development Certificate by double-clicking it. It automatically loads in the Keychain Access application.
-* in the "add certificates" popup dialog select "login" Keychain
+* IMPORTANT: Select "System" keychain in the left panel of the Keychain Access utilities
+* Launch the Certificate by double-clicking it. It automatically loads in the Keychain Access application.
+* If asked, in the "add certificates" popup dialog select "System" Keychain
 * If you get "certificate is not trusted" red warning in keychain when looking the new installed certificate then install
   also this certificate: https://www.apple.com/certificateauthority/AppleWWDRCAG3.cer
 
@@ -110,15 +112,18 @@ IOS
 * select iOS Distribution (App Store and Ad Hoc)
 * select the certificate previously saved
 * download the new certificate
-* Launch the Development Certificate by double-clicking it. It automatically loads in the Keychain Access application.
+* IMPORTANT: Select "System" keychain in the left panel of the Keychain Access utilities
+* Launch the Certificate by double-clicking it. It automatically loads in the Keychain Access application.
+* If asked, in the "add certificates" popup dialog select "System" Keychain
+* Exit keychain access 
 
-* Go to https://developer.apple.com/account/resources/identifiers/list and click (+) to add a new profile
+* Go to https://developer.apple.com/account/resources/identifiers/list and click (+) to add a new identifier
 * Select App IDs
 * Select App
 * Description: XC Wildcard
   Bundle ID: .* (wildcard)
 
-* Go to https://developer.apple.com/account/resources/identifiers/list and click (+) to add a new profile
+* Go to https://developer.apple.com/account/resources/identifiers/list and click (+) to add a new identifier
 * Select App IDs
 * Select App
 * Description: {AppName} iOS App
@@ -131,6 +136,7 @@ IOS
 * Select iOS App Development
 * Select XC Wildcard
 * Select All Certificate
+* Select All devices and include mac devices
 * Name it XC Wildcard (development)
 * Download your new provisioning profile
 * Double click on it to install it
@@ -139,11 +145,9 @@ IOS
   * delete the unwanted provisioning profiles
 * Open Xcode on the Mac and go to the Devices (Window > Devices).
 * Right-click the device (ex the iphone 7) and select Show Provisioning Profiles…
-* If you do not see your new provisioning profile: 
-  * Click the plus sign button to add a provisioning profile.
-  * Find your provisioning profile, select it and click Install.
-  * Click Done to close the window.
-* Delete also all unwanted Provisioning Profile from your mobile device
+* Delete all unwanted Provisioning Profile from your mobile device
+* Install an app from delphi in the mobile device. This will also install the provisioning 
+  profile in the mobile device.
 
 
 Configure Delphi to use the framework SDKs
@@ -269,10 +273,14 @@ Configure Delphi to use the framework SDKs
 
       https://quality.embarcadero.com/browse/RSP-38700
       You will need to manually copy the content of (assuming c:\Dev\MagicFoundation\PlatformSDKs is your BDSPLATFORMSDKSDIR)
-      c:\Dev\MagicFoundation\PlatformSDKs\iPhoneOS17.0.sdk\Applications\Xcode.app\Contents\Developer\Toolchains\XcodeDefault.xctoolchain\usr\lib\swift  to  c:\Dev\MagicFoundation\PlatformSDKs\iPhoneOS16.1.sdk\usr\lib\swift
-      c:\Dev\MagicFoundation\PlatformSDKs\iPhoneOS17.0.sdk\Applications\Xcode.app\Contents\Developer\Toolchains\XcodeDefault.xctoolchain\usr\lib\swift-5.0  to  c:\Dev\MagicFoundation\PlatformSDKs\iPhoneOS16.1.sdk\usr\lib\swift-5.0
-      c:\Dev\MagicFoundation\PlatformSDKs\iPhoneOS17.0.sdk\Applications\Xcode.app\Contents\Developer\Toolchains\XcodeDefault.xctoolchain\usr\lib\swift-5.5  to  c:\Dev\MagicFoundation\PlatformSDKs\iPhoneOS16.1.sdk\usr\lib\swift-5.5
-
+      c:\Dev\MagicFoundation\PlatformSDKs\iPhoneOS17.0.sdk\Applications\Xcode.app\Contents\Developer\Toolchains\XcodeDefault.xctoolchain\usr\lib\swift  to  c:\Dev\MagicFoundation\PlatformSDKs\iPhoneOS17.0.sdk\usr\lib\swift
+      c:\Dev\MagicFoundation\PlatformSDKs\iPhoneOS17.0.sdk\Applications\Xcode.app\Contents\Developer\Toolchains\XcodeDefault.xctoolchain\usr\lib\swift-5.0  to  c:\Dev\MagicFoundation\PlatformSDKs\iPhoneOS17.0.sdk\usr\lib\swift-5.0
+      c:\Dev\MagicFoundation\PlatformSDKs\iPhoneOS17.0.sdk\Applications\Xcode.app\Contents\Developer\Toolchains\XcodeDefault.xctoolchain\usr\lib\swift-5.5  to  c:\Dev\MagicFoundation\PlatformSDKs\iPhoneOS17.0.sdk\usr\lib\swift-5.5
+      //--
+      c:\Dev\MagicFoundation\PlatformSDKs\iPhoneSimulator17.0.sdk\Applications\Xcode.app\Contents\Developer\Toolchains\XcodeDefault.xctoolchain\usr\lib\swift  to  c:\Dev\MagicFoundation\PlatformSDKs\iPhoneSimulator17.0.sdk\usr\lib\swift
+      c:\Dev\MagicFoundation\PlatformSDKs\iPhoneSimulator17.0.sdk\Applications\Xcode.app\Contents\Developer\Toolchains\XcodeDefault.xctoolchain\usr\lib\swift-5.0  to  c:\Dev\MagicFoundation\PlatformSDKs\iPhoneSimulator17.0.sdk\usr\lib\swift-5.0
+      c:\Dev\MagicFoundation\PlatformSDKs\iPhoneSimulator17.0.sdk\Applications\Xcode.app\Contents\Developer\Toolchains\XcodeDefault.xctoolchain\usr\lib\swift-5.5  to  c:\Dev\MagicFoundation\PlatformSDKs\iPhoneSimulator17.0.sdk\usr\lib\swift-5.5
+      
 
 |  (In case you need to downgrade iOS SDK)
 |  ---------------------------------------
