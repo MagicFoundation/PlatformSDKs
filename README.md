@@ -1,39 +1,41 @@
 ANDROID
 -------
  
-* Install OpenJDK Binaries 8 and 11. 
+* Install OpenJDK Binaries 11 and 17. 
   https://adoptium.net/
-  Download the Windows installer (msi) for 
+  Download the ZIP package for 
     * Operating System: Windows 
     * Architecture: x64 
     * Package Type: jdk 
-    * Version: 8 then 11
-  and then just run the installation. In the install dialog select only:
-    * Update path (only for the version 8)
-    * Associate .jar (only for the version 8)
-    * Set JAVA_HOME variable (only for the version 8)
+    * Version: 11 and 17
+  and then UnZip it to 
+    * c:\Program Files\Eclipse Adoptium\jdk-11.0.16.101-hotspot\
+    * c:\Program Files\Eclipse Adoptium\jdk-17.0.12.7-hotspot\
+  then Add/Update in environment variables system PATH (!!!only via the GUI, do not use #{@#{^ command line like setx that will truncate path to 1024 chars!!!)
+    * c:\Program Files\Eclipse Adoptium\jdk-17.0.12.7-hotspot\bin\
+  and finally add/Update environment variables system JAVA_HOME
+    * JAVA_HOME = c:\Program Files\Eclipse Adoptium\jdk-17.0.12.7-hotspot\
 
-* download the last Command line tools from:
-  https:developer.android.com/studio#command-tools
-  Or use the one located in (if already installed)
-  {MagicFoundation}\PlatformSDKs\android\cmdline-tools\9.0\bin
+* Retrieve PlatformSDKs from git https://github.com/MagicFoundation/PlatformSDKs.git
 
 * To list installed and available packages:
-  "c:\Dev\MagicFoundation\PlatformSDKs\android\cmdline-tools\9.0\bin\sdkmanager.bat" --sdk_root=c:\Dev\MagicFoundation\PlatformSDKs\android\ --list
+  "c:\Dev\MagicFoundation\PlatformSDKs\Android\cmdline-tools\16.0\bin\sdkmanager.bat" --sdk_root=c:\Dev\MagicFoundation\PlatformSDKs\Android\ --list
 
 * To reinstall from scratch all the android SDK/NDK:
-"c:\Dev\MagicFoundation\PlatformSDKs\android\cmdline-tools\9.0\bin\sdkmanager.bat"^
+"c:\Dev\MagicFoundation\PlatformSDKs\Android\cmdline-tools\16.0\bin\sdkmanager.bat"^
  "build-tools;29.0.3"^
  "build-tools;30.0.3"^
+ "build-tools;31.0.0"^
  "build-tools;32.0.0"^
- "build-tools;33.0.1"^
- "build-tools;33.0.2"^
+ "build-tools;33.0.3"^
  "build-tools;34.0.0"^
- "cmdline-tools;3.0"^
- "cmdline-tools;7.0"^
- "cmdline-tools;8.0"^
+ "build-tools;35.0.0"^
  "cmdline-tools;9.0"^
- "emulator"^
+ "cmdline-tools;10.0"^
+ "cmdline-tools;11.0"^
+ "cmdline-tools;12.0"^
+ "cmdline-tools;13.0"^
+ "cmdline-tools;16.0"^
  "extras;android;m2repository"^
  "extras;google;google_play_services"^
  "extras;google;m2repository"^
@@ -52,6 +54,7 @@ ANDROID
  "platforms;android-32"^
  "platforms;android-33"^
  "platforms;android-34"^
+ "platforms;android-35"^
  "sources;android-23"^
  "sources;android-24"^
  "sources;android-25"^
@@ -64,10 +67,16 @@ ANDROID
  "sources;android-32"^
  "sources;android-33"^
  "sources;android-34"^
- --sdk_root=c:\Dev\MagicFoundation\PlatformSDKs\android\
+ "sources;android-35"^
+ --sdk_root=c:\Dev\MagicFoundation\PlatformSDKs\Android\
+
+* To unistall a package : 
+  "c:\Dev\MagicFoundation\PlatformSDKs\Android\cmdline-tools\16.0\bin\sdkmanager.bat" --sdk_root=c:\Dev\MagicFoundation\PlatformSDKs\Android\ --uninstall "build-tools;33.0.1"
+
+* Commit c:\Dev\MagicFoundation\PlatformSDKs\Android
 
 * to create an emulator (not work anymore on Intel):
-  "c:\Dev\MagicFoundation\PlatformSDKs\android\cmdline-tools\9.0\bin\avdmanager.bat" create avd -n android13 -k "system-images;android-33;google_apis;arm64-v8a"
+  "c:\Dev\MagicFoundation\PlatformSDKs\Android\cmdline-tools\16.0\bin\avdmanager.bat" create avd -n android13 -k "system-images;android-33;google_apis;arm64-v8a"
   but this fail: 
   https://stackoverflow.com/questions/74760027/exception-during-avdmanager-initialization
   https://github.com/ReactiveCircus/android-emulator-runner/issues/235
@@ -153,7 +162,7 @@ IOS
 Configure Delphi to use the framework SDKs
 ------------------------------------------
 
-* Tools > Options > Environment Variables > User overrides
+* Tools > Options > IDE > Environment Variables > User overrides
       > New
       > Variable Name: BDSPLATFORMSDKSDIR
       > Variable Value: c:\Dev\MagicFoundation\PlatformSDKs
@@ -201,29 +210,22 @@ Configure Delphi to use the framework SDKs
       !!WARNING!! Take a look of this post before to change anything below:
       https://stackoverflow.com/questions/60084704/aab-format-return-an-apk-without-armeabi-v7a-library-under-32-bit-devices
       Under Tools, Options, Deployment, SDK Manager you will need to add the following frameworks:
-
-      ANDROID 32 BIT SDK
-      c:\Dev\MagicFoundation\PlatformSDKs\Android\
-      c:\Dev\MagicFoundation\PlatformSDKs\Android\build-tools\34.0.0\zipalign.exe
-      c:\Dev\MagicFoundation\PlatformSDKs\Android\build-tools\34.0.0\lib\apksigner.jar
-      c:\Dev\MagicFoundation\PlatformSDKs\Android\cmdline-tools\9.0\bin\avdmanager.bat
+      
+      c:\Dev\MagicFoundation\PlatformSDKs\Android
+      c:\Dev\MagicFoundation\PlatformSDKs\Android\cmdline-tools\11.0\bin\avdmanager.bat
       c:\Dev\MagicFoundation\PlatformSDKs\Android\platform-tools\adb.exe
-      c:\Dev\MagicFoundation\PlatformSDKs\Android\build-tools\34.0.0\aapt.exe
       c:\Dev\MagicFoundation\PlatformSDKs\Android\platforms\android-34
-
-      ANDROID 32 BIT NDK
-      c:\Dev\MagicFoundation\PlatformSDKs\Android\ndk\21.4.7075529\
+      //--
+      c:\Dev\MagicFoundation\PlatformSDKs\Android\ndk\21.4.7075529
       c:\Dev\MagicFoundation\PlatformSDKs\Android\ndk\21.4.7075529\toolchains\arm-linux-androideabi-4.9\prebuilt\windows-x86_64\bin\arm-linux-androideabi-ld.exe
       c:\Dev\MagicFoundation\PlatformSDKs\Android\ndk\21.4.7075529\toolchains\arm-linux-androideabi-4.9\prebuilt\windows-x86_64\bin\arm-linux-androideabi-strip.exe
-      c:\Dev\MagicFoundation\PlatformSDKs\Android\ndk\21.4.7075529\prebuilt\android-arm\gdbserver\gdbserver
       c:\Dev\MagicFoundation\PlatformSDKs\Android\ndk\21.4.7075529\platforms\android-23
       c:\Dev\MagicFoundation\PlatformSDKs\Android\ndk\21.4.7075529\platforms\android-23\arch-arm\usr\lib
-      c:\Dev\MagicFoundation\PlatformSDKs\Android\ndk\21.4.7075529\platforms\android-23\arch-arm\usr\lib;c:\Dev\MagicFoundation\PlatformSDKs\Android\ndk\21.4.7075529\sources\cxx-stl\llvm-libc++\libs\armeabi-v7a
-
-      ANDROID 32 BIT JAVA
-      C:\Program Files\Eclipse Adoptium\jdk-11.0.16.101-hotspot\bin\keytool.exe
-      C:\Program Files\Eclipse Adoptium\jdk-11.0.16.101-hotspot\bin\jarsigner.exe
-         
+      c:\Dev\MagicFoundation\PlatformSDKs\Android\ndk\21.4.7075529\sources\cxx-stl\llvm-libc++\libs\armeabi-v7a;c:\Dev\MagicFoundation\PlatformSDKs\Android\ndk\21.4.7075529\platforms\android-23\arch-arm\usr\lib;c:\Dev\MagicFoundation\PlatformSDKs\Android\ndk\21.4.7075529\toolchains\arm-linux-androideabi-4.9\prebuilt\windows-x86_64\lib\gcc\arm-linux-androideabi\4.9.x;c:\Dev\MagicFoundation\PlatformSDKs\Android\ndk\21.4.7075529\toolchains\arm-linux-androideabi-4.9\prebuilt\windows-x86_64\arm-linux-androideabi\lib
+      //--     
+      C:\Program Files\Eclipse Adoptium\jdk-17.0.12.7-hotspot\bin\keytool.exe
+      C:\Program Files\Eclipse Adoptium\jdk-17.0.12.7-hotspot\bin\jarsigner.exe
+                     
 *  Tools > Options > Deployment > SDK Manager
       > Add
       > android 64 bit
@@ -232,27 +234,20 @@ Configure Delphi to use the framework SDKs
       https://stackoverflow.com/questions/60084704/aab-format-return-an-apk-without-armeabi-v7a-library-under-32-bit-devices
       Under Tools, Options, Deployment, SDK Manager you will need to add the following frameworks:
 
-      ANDROID 64 BIT SDK
-      c:\Dev\MagicFoundation\PlatformSDKs\Android\
-      c:\Dev\MagicFoundation\PlatformSDKs\Android\build-tools\34.0.0\zipalign.exe
-      c:\Dev\MagicFoundation\PlatformSDKs\Android\build-tools\34.0.0\lib\apksigner.jar
-      c:\Dev\MagicFoundation\PlatformSDKs\Android\cmdline-tools\9.0\bin\avdmanager.bat
+      c:\Dev\MagicFoundation\PlatformSDKs\Android
+      c:\Dev\MagicFoundation\PlatformSDKs\Android\cmdline-tools\11.0\bin\avdmanager.bat
       c:\Dev\MagicFoundation\PlatformSDKs\Android\platform-tools\adb.exe
-      c:\Dev\MagicFoundation\PlatformSDKs\Android\build-tools\34.0.0\aapt.exe
       c:\Dev\MagicFoundation\PlatformSDKs\Android\platforms\android-34
-
-      ANDROID 64 BIT NDK
-      c:\Dev\MagicFoundation\PlatformSDKs\Android\ndk\21.4.7075529\
+      //--
+      c:\Dev\MagicFoundation\PlatformSDKs\Android\ndk\21.4.7075529
       c:\Dev\MagicFoundation\PlatformSDKs\Android\ndk\21.4.7075529\toolchains\aarch64-linux-android-4.9\prebuilt\windows-x86_64\aarch64-linux-android\bin\ld.exe
       c:\Dev\MagicFoundation\PlatformSDKs\Android\ndk\21.4.7075529\toolchains\aarch64-linux-android-4.9\prebuilt\windows-x86_64\aarch64-linux-android\bin\strip.exe
-      c:\Dev\MagicFoundation\PlatformSDKs\Android\ndk\21.4.7075529\prebuilt\android-arm64\gdbserver\gdbserver
       c:\Dev\MagicFoundation\PlatformSDKs\Android\ndk\21.4.7075529\platforms\android-23
       c:\Dev\MagicFoundation\PlatformSDKs\Android\ndk\21.4.7075529\platforms\android-23\arch-arm64\usr\lib
       c:\Dev\MagicFoundation\PlatformSDKs\Android\ndk\21.4.7075529\platforms\android-23\arch-arm64\usr\lib;c:\Dev\MagicFoundation\PlatformSDKs\Android\ndk\21.4.7075529\sources\cxx-stl\llvm-libc++\libs\arm64-v8a
-
-      ANDROID 64 BIT JAVA
-      C:\Program Files\Eclipse Adoptium\jdk-11.0.16.101-hotspot\bin\keytool.exe
-      C:\Program Files\Eclipse Adoptium\jdk-11.0.16.101-hotspot\bin\jarsigner.exe
+      //--     
+      C:\Program Files\Eclipse Adoptium\jdk-17.0.12.7-hotspot\bin\keytool.exe
+      C:\Program Files\Eclipse Adoptium\jdk-17.0.12.7-hotspot\bin\jarsigner.exe
       
 *  Under Tools, Options, SDK Manager you will need to add the following frameworks for ios64 and Ios64 simulator:
       
