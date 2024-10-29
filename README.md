@@ -171,7 +171,7 @@ Configure Delphi to use the framework SDKs
       > Add
       > Profile name: VMWare
       > Platform: macOS 64-bit
-      > Remote Machine (IP address or Machine name): 192.168.161.128
+      > Remote Machine (IP address or Machine name): 192.168.80.129
       > Port number: 64211
       > password:
       
@@ -249,34 +249,49 @@ Configure Delphi to use the framework SDKs
       C:\Program Files\Eclipse Adoptium\jdk-17.0.12.7-hotspot\bin\keytool.exe
       C:\Program Files\Eclipse Adoptium\jdk-17.0.12.7-hotspot\bin\jarsigner.exe
       
-*  Under Tools, Options, SDK Manager you will need to add the following frameworks for ios64 and Ios64 simulator:
+*  Under Tools, Options, SDK Manager you will need to add the following frameworks for ios64 and ios64 Simulator :
       
-      Path on remote machine                                                                    |  File mask               |  Path Type     |  Include subdirectories
-      $(SDKROOT)/usr/lib/swift                                                                  |  *                       |  Library path  |  no
-      $(SDKROOT)/../../../../../Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos      |  *                       |  Library path  |  no
-      $(SDKROOT)/../../../../../Toolchains/XcodeDefault.xctoolchain/usr/lib/swift-5.0/iphoneos  |  *                       |  Library path  |  no
-      $(SDKROOT)/../../../../../Toolchains/XcodeDefault.xctoolchain/usr/lib/swift-5.5/iphoneos  |  *                       |  Library path  |  no
-      $(SDKROOT)/System/Library/Frameworks                                                      |  CoreData                |  Framework     |  no
-      $(SDKROOT)/System/Library/Frameworks                                                      |  Social                  |  Framework     |  no
-      $(SDKROOT)/System/Library/Frameworks                                                      |  Accounts                |  Framework     |  no
-      $(SDKROOT)/System/Library/Frameworks                                                      |  AVKit                   |  Framework     |  no
-      $(SDKROOT)/System/Library/Frameworks                                                      |  Photos                  |  Framework     |  no
-      $(SDKROOT)/System/Library/Frameworks                                                      |  AuthenticationServices  |  Framework     |  no
-      $(SDKROOT)/System/Library/Frameworks                                                      |  BackgroundTasks         |  Framework     |  no
+      Path on remote machine                                                                           |  File mask               |  Path Type     |  Include subdirectories
+      $(SDKROOT)/usr/lib/swift                                                                         |  *                       |  Library path  |  no
+      $(SDKROOT)/System/Library/Frameworks                                                             |  CoreData                |  Framework     |  no
+      $(SDKROOT)/System/Library/Frameworks                                                             |  Social                  |  Framework     |  no
+      $(SDKROOT)/System/Library/Frameworks                                                             |  Accounts                |  Framework     |  no
+      $(SDKROOT)/System/Library/Frameworks                                                             |  AVKit                   |  Framework     |  no
+      $(SDKROOT)/System/Library/Frameworks                                                             |  Photos                  |  Framework     |  no
+      $(SDKROOT)/System/Library/Frameworks                                                             |  AuthenticationServices  |  Framework     |  no
+      $(SDKROOT)/System/Library/Frameworks                                                             |  BackgroundTasks         |  Framework     |  no
 
-      make sure you Update Local File Cache.
+   for ios64 also add:
+      Path on remote machine                                                                           |  File mask               |  Path Type     |  Include subdirectories
+      $(SDKROOT)/../../../../../Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos             |  *                       |  Library path  |  no
+      $(SDKROOT)/../../../../../Toolchains/XcodeDefault.xctoolchain/usr/lib/swift-5.0/iphoneos         |  *                       |  Library path  |  no
+      $(SDKROOT)/../../../../../Toolchains/XcodeDefault.xctoolchain/usr/lib/swift-5.5/iphoneos         |  *                       |  Library path  |  no
 
-      https://quality.embarcadero.com/browse/RSP-38700
-      You will need to manually copy the content of (assuming c:\Dev\MagicFoundation\PlatformSDKs is your BDSPLATFORMSDKSDIR)
+   for ios64 SIMULATOR also add:
+      Path on remote machine                                                                           |  File mask               |  Path Type     |  Include subdirectories
+      $(SDKROOT)/../../../../../Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator      |  *                       |  Library path  |  no
+      $(SDKROOT)/../../../../../Toolchains/XcodeDefault.xctoolchain/usr/lib/swift-5.0/iphonesimulator  |  *                       |  Library path  |  no
+      $(SDKROOT)/../../../../../Toolchains/XcodeDefault.xctoolchain/usr/lib/swift-5.5/iphonesimulator  |  *                       |  Library path  |  no
+
+   make sure you Update Local File Cache.
+
+   https://quality.embarcadero.com/browse/RSP-38700
+   You will need to manually copy the content of (assuming c:\Dev\MagicFoundation\PlatformSDKs is your BDSPLATFORMSDKSDIR)
+
+   for ios64:
       c:\Dev\MagicFoundation\PlatformSDKs\iPhoneOS17.0.sdk\Applications\Xcode.app\Contents\Developer\Toolchains\XcodeDefault.xctoolchain\usr\lib\swift  to  c:\Dev\MagicFoundation\PlatformSDKs\iPhoneOS17.0.sdk\usr\lib\swift
       c:\Dev\MagicFoundation\PlatformSDKs\iPhoneOS17.0.sdk\Applications\Xcode.app\Contents\Developer\Toolchains\XcodeDefault.xctoolchain\usr\lib\swift-5.0  to  c:\Dev\MagicFoundation\PlatformSDKs\iPhoneOS17.0.sdk\usr\lib\swift-5.0
       c:\Dev\MagicFoundation\PlatformSDKs\iPhoneOS17.0.sdk\Applications\Xcode.app\Contents\Developer\Toolchains\XcodeDefault.xctoolchain\usr\lib\swift-5.5  to  c:\Dev\MagicFoundation\PlatformSDKs\iPhoneOS17.0.sdk\usr\lib\swift-5.5
-      //--
+
+   for ios64 SIMULATOR:
       c:\Dev\MagicFoundation\PlatformSDKs\iPhoneSimulator17.0.sdk\Applications\Xcode.app\Contents\Developer\Toolchains\XcodeDefault.xctoolchain\usr\lib\swift  to  c:\Dev\MagicFoundation\PlatformSDKs\iPhoneSimulator17.0.sdk\usr\lib\swift
       c:\Dev\MagicFoundation\PlatformSDKs\iPhoneSimulator17.0.sdk\Applications\Xcode.app\Contents\Developer\Toolchains\XcodeDefault.xctoolchain\usr\lib\swift-5.0  to  c:\Dev\MagicFoundation\PlatformSDKs\iPhoneSimulator17.0.sdk\usr\lib\swift-5.0
       c:\Dev\MagicFoundation\PlatformSDKs\iPhoneSimulator17.0.sdk\Applications\Xcode.app\Contents\Developer\Toolchains\XcodeDefault.xctoolchain\usr\lib\swift-5.5  to  c:\Dev\MagicFoundation\PlatformSDKs\iPhoneSimulator17.0.sdk\usr\lib\swift-5.5
       
-
+     
+     
+     
+     
 |  (In case you need to downgrade iOS SDK)
 |  ---------------------------------------
 |
