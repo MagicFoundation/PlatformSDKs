@@ -214,7 +214,7 @@ Configure Delphi to use the framework SDKs
       c:\Dev\MagicFoundation\PlatformSDKs\Android
       c:\Dev\MagicFoundation\PlatformSDKs\Android\cmdline-tools\11.0\bin\avdmanager.bat
       c:\Dev\MagicFoundation\PlatformSDKs\Android\platform-tools\adb.exe
-      c:\Dev\MagicFoundation\PlatformSDKs\Android\platforms\android-34
+      c:\Dev\MagicFoundation\PlatformSDKs\Android\platforms\android-35
       //--
       c:\Dev\MagicFoundation\PlatformSDKs\Android\ndk\21.4.7075529
       c:\Dev\MagicFoundation\PlatformSDKs\Android\ndk\21.4.7075529\toolchains\arm-linux-androideabi-4.9\prebuilt\windows-x86_64\bin\arm-linux-androideabi-ld.exe
@@ -237,7 +237,7 @@ Configure Delphi to use the framework SDKs
       c:\Dev\MagicFoundation\PlatformSDKs\Android
       c:\Dev\MagicFoundation\PlatformSDKs\Android\cmdline-tools\11.0\bin\avdmanager.bat
       c:\Dev\MagicFoundation\PlatformSDKs\Android\platform-tools\adb.exe
-      c:\Dev\MagicFoundation\PlatformSDKs\Android\platforms\android-34
+      c:\Dev\MagicFoundation\PlatformSDKs\Android\platforms\android-35
       //--
       c:\Dev\MagicFoundation\PlatformSDKs\Android\ndk\21.4.7075529
       c:\Dev\MagicFoundation\PlatformSDKs\Android\ndk\21.4.7075529\toolchains\aarch64-linux-android-4.9\prebuilt\windows-x86_64\aarch64-linux-android\bin\ld.exe
@@ -279,14 +279,14 @@ Configure Delphi to use the framework SDKs
    You will need to manually copy the content of (assuming c:\Dev\MagicFoundation\PlatformSDKs is your BDSPLATFORMSDKSDIR)
 
    for ios64:
-      c:\Dev\MagicFoundation\PlatformSDKs\iPhoneOS17.0.sdk\Applications\Xcode.app\Contents\Developer\Toolchains\XcodeDefault.xctoolchain\usr\lib\swift  to  c:\Dev\MagicFoundation\PlatformSDKs\iPhoneOS17.0.sdk\usr\lib\swift
-      c:\Dev\MagicFoundation\PlatformSDKs\iPhoneOS17.0.sdk\Applications\Xcode.app\Contents\Developer\Toolchains\XcodeDefault.xctoolchain\usr\lib\swift-5.0  to  c:\Dev\MagicFoundation\PlatformSDKs\iPhoneOS17.0.sdk\usr\lib\swift-5.0
-      c:\Dev\MagicFoundation\PlatformSDKs\iPhoneOS17.0.sdk\Applications\Xcode.app\Contents\Developer\Toolchains\XcodeDefault.xctoolchain\usr\lib\swift-5.5  to  c:\Dev\MagicFoundation\PlatformSDKs\iPhoneOS17.0.sdk\usr\lib\swift-5.5
+      c:\Dev\MagicFoundation\PlatformSDKs\iPhoneOS17.5.sdk\Applications\Xcode.app\Contents\Developer\Toolchains\XcodeDefault.xctoolchain\usr\lib\swift  to  c:\Dev\MagicFoundation\PlatformSDKs\iPhoneOS17.5.sdk\usr\lib\swift
+      c:\Dev\MagicFoundation\PlatformSDKs\iPhoneOS17.5.sdk\Applications\Xcode.app\Contents\Developer\Toolchains\XcodeDefault.xctoolchain\usr\lib\swift-5.0  to  c:\Dev\MagicFoundation\PlatformSDKs\iPhoneOS17.5.sdk\usr\lib\swift-5.0
+      c:\Dev\MagicFoundation\PlatformSDKs\iPhoneOS17.5.sdk\Applications\Xcode.app\Contents\Developer\Toolchains\XcodeDefault.xctoolchain\usr\lib\swift-5.5  to  c:\Dev\MagicFoundation\PlatformSDKs\iPhoneOS17.5.sdk\usr\lib\swift-5.5
 
    for ios64 SIMULATOR:
-      c:\Dev\MagicFoundation\PlatformSDKs\iPhoneSimulator17.0.sdk\Applications\Xcode.app\Contents\Developer\Toolchains\XcodeDefault.xctoolchain\usr\lib\swift  to  c:\Dev\MagicFoundation\PlatformSDKs\iPhoneSimulator17.0.sdk\usr\lib\swift
-      c:\Dev\MagicFoundation\PlatformSDKs\iPhoneSimulator17.0.sdk\Applications\Xcode.app\Contents\Developer\Toolchains\XcodeDefault.xctoolchain\usr\lib\swift-5.0  to  c:\Dev\MagicFoundation\PlatformSDKs\iPhoneSimulator17.0.sdk\usr\lib\swift-5.0
-      c:\Dev\MagicFoundation\PlatformSDKs\iPhoneSimulator17.0.sdk\Applications\Xcode.app\Contents\Developer\Toolchains\XcodeDefault.xctoolchain\usr\lib\swift-5.5  to  c:\Dev\MagicFoundation\PlatformSDKs\iPhoneSimulator17.0.sdk\usr\lib\swift-5.5
+      c:\Dev\MagicFoundation\PlatformSDKs\iPhoneSimulator17.5.sdk\Applications\Xcode.app\Contents\Developer\Toolchains\XcodeDefault.xctoolchain\usr\lib\swift  to  c:\Dev\MagicFoundation\PlatformSDKs\iPhoneSimulator17.5.sdk\usr\lib\swift
+      c:\Dev\MagicFoundation\PlatformSDKs\iPhoneSimulator17.5.sdk\Applications\Xcode.app\Contents\Developer\Toolchains\XcodeDefault.xctoolchain\usr\lib\swift-5.0  to  c:\Dev\MagicFoundation\PlatformSDKs\iPhoneSimulator17.5.sdk\usr\lib\swift-5.0
+      c:\Dev\MagicFoundation\PlatformSDKs\iPhoneSimulator17.5.sdk\Applications\Xcode.app\Contents\Developer\Toolchains\XcodeDefault.xctoolchain\usr\lib\swift-5.5  to  c:\Dev\MagicFoundation\PlatformSDKs\iPhoneSimulator17.5.sdk\usr\lib\swift-5.5
       
      
      
