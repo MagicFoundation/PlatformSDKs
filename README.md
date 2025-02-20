@@ -108,7 +108,7 @@ IOS
   then save the certificate somewhere on the disk
   
 * Go to https://developer.apple.com/account/resources/certificates/list and click (+) to add a new certificate
-* select iOS App Development
+* select Apple Development
 * select the certificate previously saved
 * download the new certificate
 * IMPORTANT: Select "System" keychain in the left panel of the Keychain Access utilities
@@ -118,12 +118,30 @@ IOS
   also this certificate: https://www.apple.com/certificateauthority/AppleWWDRCAG3.cer
 
 * Go to https://developer.apple.com/account/resources/certificates/list and click (+) to add a new certificate
-* select iOS Distribution (App Store and Ad Hoc)
+* select Apple Distribution
 * select the certificate previously saved
 * download the new certificate
 * IMPORTANT: Select "System" keychain in the left panel of the Keychain Access utilities
 * Launch the Certificate by double-clicking it. It automatically loads in the Keychain Access application.
 * If asked, in the "add certificates" popup dialog select "System" Keychain
+
+* Go to https://developer.apple.com/account/resources/certificates/list and click (+) to add a new certificate
+* select Mac App Distribution
+* select the certificate previously saved
+* download the new certificate
+* IMPORTANT: Select "System" keychain in the left panel of the Keychain Access utilities
+* Launch the Certificate by double-clicking it. It automatically loads in the Keychain Access application.
+* If asked, in the "add certificates" popup dialog select "System" Keychain
+* Exit keychain access 
+
+* Go to https://developer.apple.com/account/resources/certificates/list and click (+) to add a new certificate
+* select Mac Installer Distribution
+* select the certificate previously saved
+* download the new certificate
+* IMPORTANT: Select "System" keychain in the left panel of the Keychain Access utilities
+* Launch the Certificate by double-clicking it. It automatically loads in the Keychain Access application.
+* If asked, in the "add certificates" popup dialog select "System" Keychain
+
 * Exit keychain access 
 
 * Go to https://developer.apple.com/account/resources/identifiers/list and click (+) to add a new identifier
