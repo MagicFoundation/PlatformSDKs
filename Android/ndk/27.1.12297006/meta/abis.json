@@ -1,0 +1,52 @@
+{
+  "armeabi-v7a": {
+    "bitness": 32,
+    "default": true,
+    "deprecated": false,
+    "proc": "armv7-a",
+    "arch": "arm",
+    "triple": "arm-linux-androideabi",
+    "llvm_triple": "armv7-none-linux-androideabi",
+    "min_os_version": 21
+  },
+  "arm64-v8a": {
+    "bitness": 64,
+    "default": true,
+    "deprecated": false,
+    "proc": "aarch64",
+    "arch": "arm64",
+    "triple": "aarch64-linux-android",
+    "llvm_triple": "aarch64-none-linux-android",
+    "min_os_version": 21
+  },
+  "riscv64": {
+    "bitness": 64,
+    "default": false,
+    "deprecated": false,
+    "proc": "riscv64",
+    "arch": "riscv64",
+    "triple": "riscv64-linux-android",
+    "llvm_triple": "riscv64-none-linux-android",
+    "min_os_version": 35
+  },
+  "x86": {
+    "bitness": 32,
+    "default": true,
+    "deprecated": false,
+    "proc": "i686",
+    "arch": "x86",
+    "triple": "i686-linux-android",
+    "llvm_triple": "i686-none-linux-android",
+    "min_os_version": 21
+  },
+  "x86_64": {
+    "bitness": 64,
+    "default": true,
+    "deprecated": false,
+    "proc": "x86_64",
+    "arch": "x86_64",
+    "triple": "x86_64-linux-android",
+    "llvm_triple": "x86_64-none-linux-android",
+    "min_os_version": 21
+  }
+}
