@@ -190,9 +190,7 @@
     /*
      Unknown compiler, perhaps set up from the command line
     */
-#if !defined(__CODEGEARC__)
    #error unknown compiler
-#endif
     #ifndef PRAGMA_IMPORT
   #define PRAGMA_IMPORT               0
   #endif
