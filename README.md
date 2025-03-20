@@ -241,89 +241,93 @@ Configure Delphi to use the framework SDKs
 ------------------------------------------
 
 * Tools > Options > IDE > Environment Variables > User System Overrides
-      > New
-      > Variable Name: BDSPLATFORMSDKSDIR
-      > Variable Value: c:\Dev\MagicFoundation\PlatformSDKs
+    - New
+    - Variable Name: BDSPLATFORMSDKSDIR
+    - Variable Value: c:\Dev\MagicFoundation\PlatformSDKs
       
 * Tools > Options > Deployment > Connection Profile Manager
-      > Add
-      > Profile name: VMWare
-      > Platform: macOS 64-bit
-      > Remote Machine (IP address or Machine name): 192.168.80.129
-      > Port number: 64211
-      > password:
+    - Add
+    - Profile name: VMWare
+    - Platform: macOS 64-bit
+    - Remote Machine (IP address or Machine name): 192.168.80.129
+    - Port number: 64211
+    - password:
       
 * Save c:\Dev\MagicFoundation\PlatformSDKs folder somewhere (in case)
 
-* delete iPhoneOSxxx.sdk, iPhoneSimulatorxxx.sdk and MacOSXxxx.sdk inside the c:\Dev\MagicFoundation\PlatformSDKs
+* Delete iPhoneOSxxx.sdk, iPhoneSimulatorxxx.sdk and MacOSXxxx.sdk inside the c:\Dev\MagicFoundation\PlatformSDKs
 
 * Tools > Options > Deployment > SDK Manager
-      > Add
-      > macOS 64 bit   
-      > if the Connection with Delphi <-> MacOS PAServer is very slow take a look at 
-        https://quality.embarcadero.com/browse/RSP-41260 
+    - Add
+    - macOS 64 bit   
+    - if the Connection with Delphi <-> MacOS PAServer is very slow take a look at 
+      https://quality.embarcadero.com/browse/RSP-41260 
       
-*  Tools > Options > Deployment > SDK Manager
-      > Add
-      > macOS ARM 64 bit      
-      > if the Connection with Delphi <-> MacOS PAServer is very slow take a look at 
-        https://quality.embarcadero.com/browse/RSP-41260 
+* Tools > Options > Deployment > SDK Manager
+    - Add
+    - macOS ARM 64 bit      
+    - if the Connection with Delphi <-> MacOS PAServer is very slow take a look at 
+      https://quality.embarcadero.com/browse/RSP-41260 
       
-*  Tools > Options > Deployment > SDK Manager
-      > Add
-      > iOS Simulator ARM 64 bit      
-      > if the Connection with Delphi <-> MacOS PAServer is very slow take a look at 
-        https://quality.embarcadero.com/browse/RSP-41260 
+* Tools > Options > Deployment > SDK Manager
+    - Add
+    - iOS Simulator ARM 64 bit      
+    - if the Connection with Delphi <-> MacOS PAServer is very slow take a look at 
+      https://quality.embarcadero.com/browse/RSP-41260 
+  
+* Tools > Options > Deployment > SDK Manager
+    - Add
+    - iOS device 64 bit    
+    - if the Connection with Delphi <-> MacOS PAServer is very slow take a look at 
+      https://quality.embarcadero.com/browse/RSP-41260 
       
-*  Tools > Options > Deployment > SDK Manager
-      > Add
-      > iOS device 64 bit    
-      > if the Connection with Delphi <-> MacOS PAServer is very slow take a look at 
-        https://quality.embarcadero.com/browse/RSP-41260 
-        
-*  Tools > Options > Deployment > SDK Manager
-      > Add
-      > android 32 bit   
-      
-      !!WARNING!! Take a look of this post before to change anything below:
-      https://stackoverflow.com/questions/60084704/aab-format-return-an-apk-without-armeabi-v7a-library-under-32-bit-devices
-      Under Tools, Options, Deployment, SDK Manager you will need to add the following frameworks:
-                  
-      c:\Dev\MagicFoundation\PlatformSDKs\Android
-      c:\Dev\MagicFoundation\PlatformSDKs\Android\cmdline-tools\16.0\bin\avdmanager.bat
-      c:\Dev\MagicFoundation\PlatformSDKs\Android\platform-tools\Adb.exe
-      c:\Dev\MagicFoundation\PlatformSDKs\Android\platforms\android-35
-      
-      c:\Dev\MagicFoundation\PlatformSDKs\Android\ndk\27.1.12297006
-      c:\Dev\MagicFoundation\PlatformSDKs\Android\ndk\27.1.12297006\toolchains\llvm\prebuilt\windows-x86_64\bin\ld.lld.exe
-      c:\Dev\MagicFoundation\PlatformSDKs\Android\ndk\27.1.12297006\toolchains\llvm\prebuilt\windows-x86_64\bin\llvm-strip.exe
-      c:\Dev\MagicFoundation\PlatformSDKs\Android\ndk\27.1.12297006\toolchains\llvm\prebuilt\windows-x86_64\lib\clang\18\lib\linux\libclang_rt.builtins-arm-android.a
-      c:\Dev\MagicFoundation\PlatformSDKs\Android\ndk\27.1.12297006\toolchains\llvm\prebuilt\windows-x86_64\sysroot\usr\lib\arm-linux-androideabi\23;c:\Dev\MagicFoundation\PlatformSDKs\Android\ndk\27.1.12297006\toolchains\llvm\prebuilt\windows-x86_64\sysroot\usr\lib\arm-linux-androideabi
-      
-      C:\Program Files\Eclipse Adoptium\jdk-17.0.12.7-hotspot\bin\keytool.exe
-      C:\Program Files\Eclipse Adoptium\jdk-17.0.12.7-hotspot\bin\jarsigner.exe
-                                  
-*  Tools > Options > Deployment > SDK Manager
-      > Add
-      > android 64 bit
+* Tools > Options > Deployment > SDK Manager
+    - Add
+    - Android 32 bit   
 
-      !!WARNING!! Take a look of this post before to change anything below:
-      https://stackoverflow.com/questions/60084704/aab-format-return-an-apk-without-armeabi-v7a-library-under-32-bit-devices
-      Under Tools, Options, Deployment, SDK Manager you will need to add the following frameworks:      
+    !!WARNING!! Take a look of this post before to change anything below:
+    https://stackoverflow.com/questions/60084704/aab-format-return-an-apk-without-armeabi-v7a-library-under-32-bit-devices
+    Under Tools, Options, Deployment, SDK Manager you will need to add the following frameworks:
+                
+    ```
+    c:\Dev\MagicFoundation\PlatformSDKs\Android
+    c:\Dev\MagicFoundation\PlatformSDKs\Android\cmdline-tools\16.0\bin\avdmanager.bat
+    c:\Dev\MagicFoundation\PlatformSDKs\Android\platform-tools\Adb.exe
+    c:\Dev\MagicFoundation\PlatformSDKs\Android\platforms\android-35
 
-      c:\Dev\MagicFoundation\PlatformSDKs\Android
-      c:\Dev\MagicFoundation\PlatformSDKs\Android\cmdline-tools\16.0\bin\avdmanager.bat
-      c:\Dev\MagicFoundation\PlatformSDKs\Android\platform-tools\Adb.exe
-      c:\Dev\MagicFoundation\PlatformSDKs\Android\platforms\android-35
-      
-      c:\Dev\MagicFoundation\PlatformSDKs\Android\ndk\27.1.12297006
-      c:\Dev\MagicFoundation\PlatformSDKs\Android\ndk\27.1.12297006\toolchains\llvm\prebuilt\windows-x86_64\bin\ld.lld.exe
-      c:\Dev\MagicFoundation\PlatformSDKs\Android\ndk\27.1.12297006\toolchains\llvm\prebuilt\windows-x86_64\bin\llvm-strip.exe
-      c:\Dev\MagicFoundation\PlatformSDKs\Android\ndk\27.1.12297006\toolchains\llvm\prebuilt\windows-x86_64\lib\clang\18\lib\linux\libclang_rt.builtins-aarch64-android.a
-      c:\Dev\MagicFoundation\PlatformSDKs\Android\ndk\27.1.12297006\toolchains\llvm\prebuilt\windows-x86_64\sysroot\usr\lib\aarch64-linux-android\23;c:\Dev\MagicFoundation\PlatformSDKs\Android\ndk\27.1.12297006\toolchains\llvm\prebuilt\windows-x86_64\sysroot\usr\lib\aarch64-linux-android
-      
-      C:\Program Files\Eclipse Adoptium\jdk-17.0.12.7-hotspot\bin\keytool.exe
-      C:\Program Files\Eclipse Adoptium\jdk-17.0.12.7-hotspot\bin\jarsigner.exe
+    c:\Dev\MagicFoundation\PlatformSDKs\Android\ndk\27.1.12297006
+    c:\Dev\MagicFoundation\PlatformSDKs\Android\ndk\27.1.12297006\toolchains\llvm\prebuilt\windows-x86_64\bin\ld.lld.exe
+    c:\Dev\MagicFoundation\PlatformSDKs\Android\ndk\27.1.12297006\toolchains\llvm\prebuilt\windows-x86_64\bin\llvm-strip.exe
+    c:\Dev\MagicFoundation\PlatformSDKs\Android\ndk\27.1.12297006\toolchains\llvm\prebuilt\windows-x86_64\lib\clang\18\lib\linux\libclang_rt.builtins-arm-android.a
+    c:\Dev\MagicFoundation\PlatformSDKs\Android\ndk\27.1.12297006\toolchains\llvm\prebuilt\windows-x86_64\sysroot\usr\lib\arm-linux-androideabi\23;c:\Dev\MagicFoundation\PlatformSDKs\Android\ndk\27.1.12297006\toolchains\llvm\prebuilt\windows-x86_64\sysroot\usr\lib\arm-linux-androideabi
+
+    C:\Program Files\Eclipse Adoptium\jdk-17.0.12.7-hotspot\bin\keytool.exe
+    C:\Program Files\Eclipse Adoptium\jdk-17.0.12.7-hotspot\bin\jarsigner.exe
+    ```
+                               
+* Tools > Options > Deployment > SDK Manager
+    - Add
+    - android 64 bit  
+
+    !!WARNING!! Take a look of this post before to change anything below:
+    https://stackoverflow.com/questions/60084704/aab-format-return-an-apk-without-armeabi-v7a-library-under-32-bit-devices
+    Under Tools, Options, Deployment, SDK Manager you will need to add the following frameworks:      
+
+    ```
+    c:\Dev\MagicFoundation\PlatformSDKs\Android
+    c:\Dev\MagicFoundation\PlatformSDKs\Android\cmdline-tools\16.0\bin\avdmanager.bat
+    c:\Dev\MagicFoundation\PlatformSDKs\Android\platform-tools\Adb.exe
+    c:\Dev\MagicFoundation\PlatformSDKs\Android\platforms\android-35
+
+    c:\Dev\MagicFoundation\PlatformSDKs\Android\ndk\27.1.12297006
+    c:\Dev\MagicFoundation\PlatformSDKs\Android\ndk\27.1.12297006\toolchains\llvm\prebuilt\windows-x86_64\bin\ld.lld.exe
+    c:\Dev\MagicFoundation\PlatformSDKs\Android\ndk\27.1.12297006\toolchains\llvm\prebuilt\windows-x86_64\bin\llvm-strip.exe
+    c:\Dev\MagicFoundation\PlatformSDKs\Android\ndk\27.1.12297006\toolchains\llvm\prebuilt\windows-x86_64\lib\clang\18\lib\linux\libclang_rt.builtins-aarch64-android.a
+    c:\Dev\MagicFoundation\PlatformSDKs\Android\ndk\27.1.12297006\toolchains\llvm\prebuilt\windows-x86_64\sysroot\usr\lib\aarch64-linux-android\23;c:\Dev\MagicFoundation\PlatformSDKs\Android\ndk\27.1.12297006\toolchains\llvm\prebuilt\windows-x86_64\sysroot\usr\lib\aarch64-linux-android
+
+    C:\Program Files\Eclipse Adoptium\jdk-17.0.12.7-hotspot\bin\keytool.exe
+    C:\Program Files\Eclipse Adoptium\jdk-17.0.12.7-hotspot\bin\jarsigner.exe
+    ```
 
 *  Under Tools, Options, SDK Manager you will need to add the following frameworks for ios64 and ios64 Simulator :
       
