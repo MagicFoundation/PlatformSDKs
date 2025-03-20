@@ -331,7 +331,7 @@ Configure Delphi to use the framework SDKs
       C:\Program Files\Eclipse Adoptium\jdk-17.0.12.7-hotspot\bin\jarsigner.exe
       ```
 
-* Under Tools, Options, SDK Manager you will need to add the following frameworks for ios64 and ios64 Simulator :
+* Under Tools, Options, SDK Manager you will need to add the following frameworks for ios64 and ios64 Simulator:
       
   ```
   Path on remote machine                                                                           |  File mask               |  Path Type     |  Include subdirectories
@@ -363,7 +363,7 @@ Configure Delphi to use the framework SDKs
     $(SDKROOT)/../../../../../Toolchains/XcodeDefault.xctoolchain/usr/lib/swift-5.5/iphonesimulator  |  *                       |  Library path  |  no
     ```
 
-   make sure you Update Local File Cache.
+   Make sure you Update Local File Cache.
 
      
 In case you need to downgrade iOS SDK
@@ -374,8 +374,8 @@ and you install a version of Xcode that does not support
 iOS 11.2 SDK, here’s how to proceed:
 
   - download xcode 9.2 from https://developer.apple.com/download/more/
-  - Unzip the downloaded file in /Users/zeus/Documents
-  - sudo cp -r /Users/zeus/Documents/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.2.sdk
-  - sudo cp -r /Users/zeus/Documents/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.2.sdk
-  - sudo /usr/libexec/PlistBuddy -c "Set :MinimumSDKVersion 11.2" /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Info.plist
-  - sudo /usr/libexec/PlistBuddy -c "Set :MinimumSDKVersion 11.2" /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Info.plist
+  - Unzip the downloaded file in `/Users/zeus/Documents`
+  - `sudo cp -r /Users/zeus/Documents/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.2.sdk`
+  - `sudo cp -r /Users/zeus/Documents/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.2.sdk`
+  - `sudo /usr/libexec/PlistBuddy -c "Set :MinimumSDKVersion 11.2" /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Info.plist`
+  - `sudo /usr/libexec/PlistBuddy -c "Set :MinimumSDKVersion 11.2" /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Info.plist`
