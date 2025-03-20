@@ -13,98 +13,107 @@ run `Pack.bat` to compress those big files.
 ANDROID
 -------
  
-1. **Install OpenJDK Binaries 11 and 17**  
-   - Download **ZIP package** from [Adoptium](https://adoptium.net/)  
-   - **Operating System**: Windows  
-   - **Architecture**: x64  
-   - **Package Type**: jdk  
-   - **Versions**: 11 and 17  
+### Install OpenJDK Binaries 11 and 17  
 
-   Then **unzip** them to:
-   ```
-   c:\Program Files\Eclipse Adoptium\jdk-11.0.16.101-hotspot\
-   c:\Program Files\Eclipse Adoptium\jdk-17.0.12.7-hotspot\
-   ```
+  - Download **ZIP package** from [Adoptium](https://adoptium.net/)  
+  - **Operating System**: Windows  
+  - **Architecture**: x64  
+  - **Package Type**: jdk  
+  - **Versions**: 11 and 17  
 
-   Next, **add/update** in **system environment variables** (using the GUI—**do not** use `setx` as it might truncate the PATH to 1024 chars):
-   ```
-   c:\Program Files\Eclipse Adoptium\jdk-17.0.12.7-hotspot\bin\
-   ```
+Then **unzip** them to:
 
-   Finally, **add/update** system environment variable `JAVA_HOME`:
-   ```
-   JAVA_HOME = c:\Program Files\Eclipse Adoptium\jdk-17.0.12.7-hotspot\
-   ```
+```
+c:\Program Files\Eclipse Adoptium\jdk-11.0.16.101-hotspot\
+c:\Program Files\Eclipse Adoptium\jdk-17.0.12.7-hotspot\
+```
+
+Next, **add/update** in **system environment variables** (using the GUI—**do not** use `setx` as it might truncate the PATH to 1024 chars):
+
+```
+c:\Program Files\Eclipse Adoptium\jdk-17.0.12.7-hotspot\bin\
+```
+
+Finally, **add/update** system environment variable `JAVA_HOME`:
+
+```
+JAVA_HOME = c:\Program Files\Eclipse Adoptium\jdk-17.0.12.7-hotspot\
+```
    
-2. **List installed and available packages**  
-   ```
-   "c:\Dev\MagicFoundation\PlatformSDKs\Android\cmdline-tools\16.0\bin\sdkmanager.bat" --sdk_root=c:\Dev\MagicFoundation\PlatformSDKs\Android\ --list
-   ```
-   
-3. **Reinstall all the Android SDK/NDK**  
-   ```
-   "c:\Dev\MagicFoundation\PlatformSDKs\Android\cmdline-tools\16.0\bin\sdkmanager.bat"^
-    "build-tools;29.0.3"^
-    "build-tools;30.0.3"^
-    "build-tools;31.0.0"^
-    "build-tools;32.0.0"^
-    "build-tools;33.0.3"^
-    "build-tools;34.0.0"^
-    "build-tools;35.0.0"^
-    "cmdline-tools;9.0"^
-    "cmdline-tools;10.0"^
-    "cmdline-tools;11.0"^
-    "cmdline-tools;12.0"^
-    "cmdline-tools;13.0"^
-    "cmdline-tools;16.0"^
-    "extras;android;m2repository"^
-    "extras;google;google_play_services"^
-    "extras;google;m2repository"^
-    "extras;google;usb_driver"^
-    "ndk;27.1.12297006"^
-    "ndk;27.1.12297006"^
-    "platform-tools"^
-    "platforms;android-23"^
-    "platforms;android-24"^
-    "platforms;android-25"^
-    "platforms;android-26"^
-    "platforms;android-27"^
-    "platforms;android-28"^
-    "platforms;android-29"^
-    "platforms;android-30"^
-    "platforms;android-31"^
-    "platforms;android-32"^
-    "platforms;android-33"^
-    "platforms;android-34"^
-    "platforms;android-35"^
-    "sources;android-23"^
-    "sources;android-24"^
-    "sources;android-25"^
-    "sources;android-26"^
-    "sources;android-27"^
-    "sources;android-28"^
-    "sources;android-29"^
-    "sources;android-30"^
-    "sources;android-31"^
-    "sources;android-32"^
-    "sources;android-33"^
-    "sources;android-34"^
-    "sources;android-35"^
-    --sdk_root=c:\Dev\MagicFoundation\PlatformSDKs\Android\
-   ```
+### List installed and available packages  
 
-4. **Uninstall a package**  
-   ```
-   "c:\Dev\MagicFoundation\PlatformSDKs\Android\cmdline-tools\16.0\bin\sdkmanager.bat" --sdk_root=c:\Dev\MagicFoundation\PlatformSDKs\Android\ --uninstall "build-tools;33.0.1"
-   ```
+```
+"c:\Dev\MagicFoundation\PlatformSDKs\Android\cmdline-tools\16.0\bin\sdkmanager.bat" --sdk_root=c:\Dev\MagicFoundation\PlatformSDKs\Android\ --list
+```
    
-5. **Create an emulator (doesn't work anymore on Intel)**  
-   ```
-   "c:\Dev\MagicFoundation\PlatformSDKs\Android\cmdline-tools\16.0\bin\avdmanager.bat" create avd -n android13 -k "system-images;android-33;google_apis;arm64-v8a"
-   ```
-   However, this may fail due to known issues:  
-   - [StackOverflow discussion](https://stackoverflow.com/questions/74760027/exception-during-avdmanager-initialization)  
-   - [GitHub issue](https://github.com/ReactiveCircus/android-emulator-runner/issues/235)
+### Reinstall all the Android SDK/NDK 
+
+```
+"c:\Dev\MagicFoundation\PlatformSDKs\Android\cmdline-tools\16.0\bin\sdkmanager.bat"^
+ "build-tools;29.0.3"^
+ "build-tools;30.0.3"^
+ "build-tools;31.0.0"^
+ "build-tools;32.0.0"^
+ "build-tools;33.0.3"^
+ "build-tools;34.0.0"^
+ "build-tools;35.0.0"^
+ "cmdline-tools;9.0"^
+ "cmdline-tools;10.0"^
+ "cmdline-tools;11.0"^
+ "cmdline-tools;12.0"^
+ "cmdline-tools;13.0"^
+ "cmdline-tools;16.0"^
+ "extras;android;m2repository"^
+ "extras;google;google_play_services"^
+ "extras;google;m2repository"^
+ "extras;google;usb_driver"^
+ "ndk;27.1.12297006"^
+ "ndk;27.1.12297006"^
+ "platform-tools"^
+ "platforms;android-23"^
+ "platforms;android-24"^
+ "platforms;android-25"^
+ "platforms;android-26"^
+ "platforms;android-27"^
+ "platforms;android-28"^
+ "platforms;android-29"^
+ "platforms;android-30"^
+ "platforms;android-31"^
+ "platforms;android-32"^
+ "platforms;android-33"^
+ "platforms;android-34"^
+ "platforms;android-35"^
+ "sources;android-23"^
+ "sources;android-24"^
+ "sources;android-25"^
+ "sources;android-26"^
+ "sources;android-27"^
+ "sources;android-28"^
+ "sources;android-29"^
+ "sources;android-30"^
+ "sources;android-31"^
+ "sources;android-32"^
+ "sources;android-33"^
+ "sources;android-34"^
+ "sources;android-35"^
+ --sdk_root=c:\Dev\MagicFoundation\PlatformSDKs\Android\
+```
+
+### Uninstall a package 
+
+```
+"c:\Dev\MagicFoundation\PlatformSDKs\Android\cmdline-tools\16.0\bin\sdkmanager.bat" --sdk_root=c:\Dev\MagicFoundation\PlatformSDKs\Android\ --uninstall "build-tools;33.0.1"
+```
+   
+### Create an emulator (doesn't work anymore on Intel)
+
+```
+"c:\Dev\MagicFoundation\PlatformSDKs\Android\cmdline-tools\16.0\bin\avdmanager.bat" create avd -n android13 -k "system-images;android-33;google_apis;arm64-v8a"
+```
+
+However, this may fail due to known issues:  
+  - [StackOverflow discussion](https://stackoverflow.com/questions/74760027/exception-during-avdmanager-initialization)  
+  - [GitHub issue](https://github.com/ReactiveCircus/android-emulator-runner/issues/235)
     
  
 IOS
