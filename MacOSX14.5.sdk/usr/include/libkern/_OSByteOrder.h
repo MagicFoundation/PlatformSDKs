@@ -94,9 +94,6 @@
 
 #if defined(__i386__) || defined(__x86_64__)
 
-#if !defined(__CODEGEARC__SWAPINT__)
-#define __CODEGEARC__SWAPINT__
-
 __DARWIN_OS_INLINE
 uint16_t
 _OSSwapInt16(
@@ -123,9 +120,6 @@ _OSSwapInt64(
 {
 	return __DARWIN_OSSwapConstInt64(data);
 }
-
-#endif /* __CODEGEARC__SWAPINT__ */
-
 #endif
 
 #define __DARWIN_OSSwapInt16(x) _OSSwapInt16(x)

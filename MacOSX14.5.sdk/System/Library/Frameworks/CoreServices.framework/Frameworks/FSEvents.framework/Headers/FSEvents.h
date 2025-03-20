@@ -572,13 +572,10 @@ enum {
  */
 typedef UInt64                          FSEventStreamEventId;
 
-#if defined(__CODEGEARC__)
-const unsigned __int64 kFSEventStreamEventIdSinceNow = 0xFFFFFFFFFFFFFFFFULL;
-#else
 enum {
     kFSEventStreamEventIdSinceNow = 0xFFFFFFFFFFFFFFFFULL
 };
-#endif
+
 
 /*
  *  FSEventStreamRef

@@ -78,9 +78,7 @@
 /* This SDK is designed to work with clang and specific versions of
  * gcc >= 4.0 with Apple's patch sets */
 #if !defined(__GNUC__) || __GNUC__ < 4
-#if !defined(__CODEGEARC__)
 #warning "Unsupported compiler detected"
-#endif
 #endif
 
 /*

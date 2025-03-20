@@ -169,10 +169,6 @@ __BEGIN_DECLS
 #define XPC_NOINLINE
 /*! @parseOnly */
 #define XPC_NOIMPL
-#if defined(__CODEGEARC__)
-/*! @parseOnly */
-#define XPC_DEBUGGER_EXCL
-#endif
 /*! @parseOnly */
 #define XPC_EXPORT extern
 /*! @parseOnly */

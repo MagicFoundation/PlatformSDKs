@@ -18,7 +18,7 @@
 #endif
 
 
-#if (TARGET_CPU_X86 || TARGET_CPU_X86_64) && !defined(__CODEGEARC__)
+#if TARGET_CPU_X86 || TARGET_CPU_X86_64
 #include <emmintrin.h>
 #endif
 
@@ -207,11 +207,9 @@ typedef VectorInformationPowerPC        VectorInformation;
 
 #if TARGET_CPU_X86 || TARGET_CPU_X86_64
 union Vector128Intel {
-#if !defined(__CODEGEARC__)
   __m128              s;
   __m128i             si;
   __m128d             sd;
-#endif
   unsigned char       c[16];
 };
 typedef union Vector128Intel            Vector128Intel;

@@ -82,9 +82,8 @@ extern "C" {
     #define _IntSaturate(x) ((int) (x))
 
 #else
-#if !defined(__CODEGEARC__)
+
     #error "Unknown architecture."
-#endif
     // To use unoptimized standard C code, remove above line.
     #define _IntSaturate(x) ((x) <= -0x1p31f ? (int) -0x80000000 : \
         0x1p31f <= (x) ? (int) 0x7fffffff : (int) (x))

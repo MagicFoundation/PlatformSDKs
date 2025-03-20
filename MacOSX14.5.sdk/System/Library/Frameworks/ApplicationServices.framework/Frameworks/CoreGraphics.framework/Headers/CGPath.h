@@ -389,12 +389,10 @@ CG_EXTERN void CGPathApply(CGPathRef cg_nullable path, void * __nullable info,
     CGPathApplierFunction cg_nullable function)
     CG_AVAILABLE_STARTING(10.2, 2.0);
 
-#if !defined(__CODEGEARC__)
 typedef void (^CGPathApplyBlock)(const CGPathElement * element);
 
 CG_EXTERN void CGPathApplyWithBlock(CGPathRef path, CGPathApplyBlock CF_NOESCAPE block)
     CG_AVAILABLE_STARTING(10.13, 11.0);
-#endif
 
 
 /* Returns a new weakly-simple path without self-intersections and with a normalized orientation. Filling the resulting path using even-odd or non-zero filling is identical. */

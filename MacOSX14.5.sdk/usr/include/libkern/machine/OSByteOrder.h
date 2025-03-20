@@ -43,9 +43,6 @@
 
 /* Generic byte swapping functions. */
 
-#if !defined(__CODEGEARC__SWAPINT__)
-#define __CODEGEARC__SWAPINT__
-
 OS_INLINE
 uint16_t
 _OSSwapInt16(
@@ -72,8 +69,6 @@ _OSSwapInt64(
 {
 	return OSSwapConstInt64(data);
 }
-
-#endif /* __CODEGEARC__SWAPINT__ */
 
 /* Functions for byte reversed loads. */
 
