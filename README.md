@@ -148,8 +148,8 @@ IOS
       - User Email Address: {Your apple ID Email}
       - Common name: developer.apple.com
       - CA Email Address: {leaveEmpty} 
-      - Save to Disk: {Checked}  
-    then save the certificate somewhere on the disk
+      - Save to Disk: {Checked}
+      - Save the certificate somewhere on the disk
     
 ### Obtain & Install Apple Development Certificate
     
@@ -200,19 +200,19 @@ IOS
   - Go to https://developer.apple.com/account/resources/identifiers/list and click (+) to add a new identifier
   - Select App IDs
   - Select App
-  - Description: XC Wildcard
-    Bundle ID: .* (wildcard)
+      - Description: XC Wildcard  
+      - Bundle ID: .* (wildcard)
 
 ### Add an iOS Explicit App ID
 
   - Go to https://developer.apple.com/account/resources/identifiers/list and click (+) to add a new identifier
   - Select App IDs
   - Select App
-  - Description: {AppName} iOS App
-    Bundle ID: {Domain in lowercase}.{AppName in lowercase}.app.ios (explicit)
-    Associated Domains: YES
-    Sign In with Apple: YES (Enable as a primary App ID)
-    Push Notifications: YES
+      - Description: {AppName} iOS App  
+      - Bundle ID: {Domain in lowercase}.{AppName in lowercase}.app.ios (explicit)  
+      - Associated Domains: YES  
+      - Sign In with Apple: YES (Enable as a primary App ID)  
+      - Push Notifications: YES  
 
 ### Create iOS Development Provisioning Profile
 
@@ -225,8 +225,8 @@ IOS
   - Download your new provisioning profile
   - Double click on it to install it
   - Verify that the provisioning profile is well installed in /Users/zeus/Library/MobileDevice/Provisioning Profiles/
-    - Right click on each file and select "get info"
-    - delete the unwanted provisioning profiles
+      - Right click on each file and select "get info"
+      - delete the unwanted provisioning profiles
 
 ### Manage Provisioning Profiles & Deploy
 
