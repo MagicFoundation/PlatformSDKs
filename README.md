@@ -1,5 +1,44 @@
+Ghitub Repository
+-----------------
+
+Because ghitub does not support file > 100MB,  
+some files are stored compressed. So every time  
+you update this repository (`git pull`), you must  
+run `Unpack.bat`.
+
+In the same way, before every commit you must  
+run `Pack.bat` to compress those big files.
+
+
 ANDROID
 -------
+ 
+1. **Install OpenJDK Binaries 11 and 17**  
+   - Download from [Adoptium](https://adoptium.net/)  
+   - **Operating System**: Windows  
+   - **Architecture**: x64  
+   - **Package Type**: jdk  
+   - **Versions**: 11 and 17  
+
+   Then **unzip** them to:
+   ```
+   c:\Program Files\Eclipse Adoptium\jdk-11.0.16.101-hotspot\
+   c:\Program Files\Eclipse Adoptium\jdk-17.0.12.7-hotspot\
+   ```
+
+   Next, **add/update** in **system environment variables** (using the GUI—**do not** use `setx` as it might truncate the PATH):
+   ```
+   c:\Program Files\Eclipse Adoptium\jdk-17.0.12.7-hotspot\bin\
+   ```
+
+   Finally, **add/update** system environment variable `JAVA_HOME`:
+   ```
+   JAVA_HOME = c:\Program Files\Eclipse Adoptium\jdk-17.0.12.7-hotspot\
+   ```
+   
+ 
+ 
+
  
 * Install OpenJDK Binaries 11 and 17. 
   https://adoptium.net/
