@@ -285,96 +285,97 @@ Configure Delphi to use the framework SDKs
     - Add
     - Android 32 bit   
 
-    !!WARNING!! Take a look of this post before to change anything below:
-    https://stackoverflow.com/questions/60084704/aab-format-return-an-apk-without-armeabi-v7a-library-under-32-bit-devices
-    Under Tools, Options, Deployment, SDK Manager you will need to add the following frameworks:
-                
-    ```
-    c:\Dev\MagicFoundation\PlatformSDKs\Android
-    c:\Dev\MagicFoundation\PlatformSDKs\Android\cmdline-tools\16.0\bin\avdmanager.bat
-    c:\Dev\MagicFoundation\PlatformSDKs\Android\platform-tools\Adb.exe
-    c:\Dev\MagicFoundation\PlatformSDKs\Android\platforms\android-35
+      !!WARNING!! Take a look of this post before to change anything below:
+      https://stackoverflow.com/questions/60084704/aab-format-return-an-apk-without-armeabi-v7a-library-under-32-bit-devices  
+      
+      Under Tools, Options, Deployment, SDK Manager you will need to add the following frameworks:
+                  
+      ```
+      c:\Dev\MagicFoundation\PlatformSDKs\Android
+      c:\Dev\MagicFoundation\PlatformSDKs\Android\cmdline-tools\16.0\bin\avdmanager.bat
+      c:\Dev\MagicFoundation\PlatformSDKs\Android\platform-tools\Adb.exe
+      c:\Dev\MagicFoundation\PlatformSDKs\Android\platforms\android-35
 
-    c:\Dev\MagicFoundation\PlatformSDKs\Android\ndk\27.1.12297006
-    c:\Dev\MagicFoundation\PlatformSDKs\Android\ndk\27.1.12297006\toolchains\llvm\prebuilt\windows-x86_64\bin\ld.lld.exe
-    c:\Dev\MagicFoundation\PlatformSDKs\Android\ndk\27.1.12297006\toolchains\llvm\prebuilt\windows-x86_64\bin\llvm-strip.exe
-    c:\Dev\MagicFoundation\PlatformSDKs\Android\ndk\27.1.12297006\toolchains\llvm\prebuilt\windows-x86_64\lib\clang\18\lib\linux\libclang_rt.builtins-arm-android.a
-    c:\Dev\MagicFoundation\PlatformSDKs\Android\ndk\27.1.12297006\toolchains\llvm\prebuilt\windows-x86_64\sysroot\usr\lib\arm-linux-androideabi\23;c:\Dev\MagicFoundation\PlatformSDKs\Android\ndk\27.1.12297006\toolchains\llvm\prebuilt\windows-x86_64\sysroot\usr\lib\arm-linux-androideabi
+      c:\Dev\MagicFoundation\PlatformSDKs\Android\ndk\27.1.12297006
+      c:\Dev\MagicFoundation\PlatformSDKs\Android\ndk\27.1.12297006\toolchains\llvm\prebuilt\windows-x86_64\bin\ld.lld.exe
+      c:\Dev\MagicFoundation\PlatformSDKs\Android\ndk\27.1.12297006\toolchains\llvm\prebuilt\windows-x86_64\bin\llvm-strip.exe
+      c:\Dev\MagicFoundation\PlatformSDKs\Android\ndk\27.1.12297006\toolchains\llvm\prebuilt\windows-x86_64\lib\clang\18\lib\linux\libclang_rt.builtins-arm-android.a
+      c:\Dev\MagicFoundation\PlatformSDKs\Android\ndk\27.1.12297006\toolchains\llvm\prebuilt\windows-x86_64\sysroot\usr\lib\arm-linux-androideabi\23;c:\Dev\MagicFoundation\PlatformSDKs\Android\ndk\27.1.12297006\toolchains\llvm\prebuilt\windows-x86_64\sysroot\usr\lib\arm-linux-androideabi
 
-    C:\Program Files\Eclipse Adoptium\jdk-17.0.12.7-hotspot\bin\keytool.exe
-    C:\Program Files\Eclipse Adoptium\jdk-17.0.12.7-hotspot\bin\jarsigner.exe
-    ```
+      C:\Program Files\Eclipse Adoptium\jdk-17.0.12.7-hotspot\bin\keytool.exe
+      C:\Program Files\Eclipse Adoptium\jdk-17.0.12.7-hotspot\bin\jarsigner.exe
+      ```
                                
 * Tools > Options > Deployment > SDK Manager
     - Add
     - android 64 bit  
 
-    !!WARNING!! Take a look of this post before to change anything below:
-    https://stackoverflow.com/questions/60084704/aab-format-return-an-apk-without-armeabi-v7a-library-under-32-bit-devices
-    Under Tools, Options, Deployment, SDK Manager you will need to add the following frameworks:      
-
-    ```
-    c:\Dev\MagicFoundation\PlatformSDKs\Android
-    c:\Dev\MagicFoundation\PlatformSDKs\Android\cmdline-tools\16.0\bin\avdmanager.bat
-    c:\Dev\MagicFoundation\PlatformSDKs\Android\platform-tools\Adb.exe
-    c:\Dev\MagicFoundation\PlatformSDKs\Android\platforms\android-35
-
-    c:\Dev\MagicFoundation\PlatformSDKs\Android\ndk\27.1.12297006
-    c:\Dev\MagicFoundation\PlatformSDKs\Android\ndk\27.1.12297006\toolchains\llvm\prebuilt\windows-x86_64\bin\ld.lld.exe
-    c:\Dev\MagicFoundation\PlatformSDKs\Android\ndk\27.1.12297006\toolchains\llvm\prebuilt\windows-x86_64\bin\llvm-strip.exe
-    c:\Dev\MagicFoundation\PlatformSDKs\Android\ndk\27.1.12297006\toolchains\llvm\prebuilt\windows-x86_64\lib\clang\18\lib\linux\libclang_rt.builtins-aarch64-android.a
-    c:\Dev\MagicFoundation\PlatformSDKs\Android\ndk\27.1.12297006\toolchains\llvm\prebuilt\windows-x86_64\sysroot\usr\lib\aarch64-linux-android\23;c:\Dev\MagicFoundation\PlatformSDKs\Android\ndk\27.1.12297006\toolchains\llvm\prebuilt\windows-x86_64\sysroot\usr\lib\aarch64-linux-android
-
-    C:\Program Files\Eclipse Adoptium\jdk-17.0.12.7-hotspot\bin\keytool.exe
-    C:\Program Files\Eclipse Adoptium\jdk-17.0.12.7-hotspot\bin\jarsigner.exe
-    ```
-
-*  Under Tools, Options, SDK Manager you will need to add the following frameworks for ios64 and ios64 Simulator :
+      !!WARNING!! Take a look of this post before to change anything below:
+      https://stackoverflow.com/questions/60084704/aab-format-return-an-apk-without-armeabi-v7a-library-under-32-bit-devices  
       
-      Path on remote machine                                                                           |  File mask               |  Path Type     |  Include subdirectories
-      $(SDKROOT)/usr/lib/swift                                                                         |  *                       |  Library path  |  no
-      $(SDKROOT)/System/Library/Frameworks                                                             |  CoreData                |  Framework     |  no
-      $(SDKROOT)/System/Library/Frameworks                                                             |  Social                  |  Framework     |  no
-      $(SDKROOT)/System/Library/Frameworks                                                             |  Accounts                |  Framework     |  no
-      $(SDKROOT)/System/Library/Frameworks                                                             |  AVKit                   |  Framework     |  no
-      $(SDKROOT)/System/Library/Frameworks                                                             |  Photos                  |  Framework     |  no
-      $(SDKROOT)/System/Library/Frameworks                                                             |  AuthenticationServices  |  Framework     |  no
-      $(SDKROOT)/System/Library/Frameworks                                                             |  BackgroundTasks         |  Framework     |  no
+      Under Tools, Options, Deployment, SDK Manager you will need to add the following frameworks:      
 
-   for ios64 also add:
-      Path on remote machine                                                                           |  File mask               |  Path Type     |  Include subdirectories
-      $(SDKROOT)/../../../../../Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos             |  *                       |  Library path  |  no
-      $(SDKROOT)/../../../../../Toolchains/XcodeDefault.xctoolchain/usr/lib/swift-5.0/iphoneos         |  *                       |  Library path  |  no
-      $(SDKROOT)/../../../../../Toolchains/XcodeDefault.xctoolchain/usr/lib/swift-5.5/iphoneos         |  *                       |  Library path  |  no
+      ```
+      c:\Dev\MagicFoundation\PlatformSDKs\Android
+      c:\Dev\MagicFoundation\PlatformSDKs\Android\cmdline-tools\16.0\bin\avdmanager.bat
+      c:\Dev\MagicFoundation\PlatformSDKs\Android\platform-tools\Adb.exe
+      c:\Dev\MagicFoundation\PlatformSDKs\Android\platforms\android-35
 
-   for ios64 SIMULATOR also add:
-      Path on remote machine                                                                           |  File mask               |  Path Type     |  Include subdirectories
-      $(SDKROOT)/../../../../../Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator      |  *                       |  Library path  |  no
-      $(SDKROOT)/../../../../../Toolchains/XcodeDefault.xctoolchain/usr/lib/swift-5.0/iphonesimulator  |  *                       |  Library path  |  no
-      $(SDKROOT)/../../../../../Toolchains/XcodeDefault.xctoolchain/usr/lib/swift-5.5/iphonesimulator  |  *                       |  Library path  |  no
+      c:\Dev\MagicFoundation\PlatformSDKs\Android\ndk\27.1.12297006
+      c:\Dev\MagicFoundation\PlatformSDKs\Android\ndk\27.1.12297006\toolchains\llvm\prebuilt\windows-x86_64\bin\ld.lld.exe
+      c:\Dev\MagicFoundation\PlatformSDKs\Android\ndk\27.1.12297006\toolchains\llvm\prebuilt\windows-x86_64\bin\llvm-strip.exe
+      c:\Dev\MagicFoundation\PlatformSDKs\Android\ndk\27.1.12297006\toolchains\llvm\prebuilt\windows-x86_64\lib\clang\18\lib\linux\libclang_rt.builtins-aarch64-android.a
+      c:\Dev\MagicFoundation\PlatformSDKs\Android\ndk\27.1.12297006\toolchains\llvm\prebuilt\windows-x86_64\sysroot\usr\lib\aarch64-linux-android\23;c:\Dev\MagicFoundation\PlatformSDKs\Android\ndk\27.1.12297006\toolchains\llvm\prebuilt\windows-x86_64\sysroot\usr\lib\aarch64-linux-android
+
+      C:\Program Files\Eclipse Adoptium\jdk-17.0.12.7-hotspot\bin\keytool.exe
+      C:\Program Files\Eclipse Adoptium\jdk-17.0.12.7-hotspot\bin\jarsigner.exe
+      ```
+
+* Under Tools, Options, SDK Manager you will need to add the following frameworks for ios64 and ios64 Simulator :
+      
+  ```
+  Path on remote machine                                                                           |  File mask               |  Path Type     |  Include subdirectories
+  $(SDKROOT)/usr/lib/swift                                                                         |  *                       |  Library path  |  no
+  $(SDKROOT)/System/Library/Frameworks                                                             |  CoreData                |  Framework     |  no
+  $(SDKROOT)/System/Library/Frameworks                                                             |  Social                  |  Framework     |  no
+  $(SDKROOT)/System/Library/Frameworks                                                             |  Accounts                |  Framework     |  no
+  $(SDKROOT)/System/Library/Frameworks                                                             |  AVKit                   |  Framework     |  no
+  $(SDKROOT)/System/Library/Frameworks                                                             |  Photos                  |  Framework     |  no
+  $(SDKROOT)/System/Library/Frameworks                                                             |  AuthenticationServices  |  Framework     |  no
+  $(SDKROOT)/System/Library/Frameworks                                                             |  BackgroundTasks         |  Framework     |  no
+  ```
+
+  - for ios64 also add:
+    
+    ```
+    Path on remote machine                                                                           |  File mask               |  Path Type     |  Include subdirectories
+    $(SDKROOT)/../../../../../Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos             |  *                       |  Library path  |  no
+    $(SDKROOT)/../../../../../Toolchains/XcodeDefault.xctoolchain/usr/lib/swift-5.0/iphoneos         |  *                       |  Library path  |  no
+    $(SDKROOT)/../../../../../Toolchains/XcodeDefault.xctoolchain/usr/lib/swift-5.5/iphoneos         |  *                       |  Library path  |  no
+    ```
+
+  - for ios64 SIMULATOR also add:
+  
+    ``` 
+    Path on remote machine                                                                           |  File mask               |  Path Type     |  Include subdirectories
+    $(SDKROOT)/../../../../../Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator      |  *                       |  Library path  |  no
+    $(SDKROOT)/../../../../../Toolchains/XcodeDefault.xctoolchain/usr/lib/swift-5.0/iphonesimulator  |  *                       |  Library path  |  no
+    $(SDKROOT)/../../../../../Toolchains/XcodeDefault.xctoolchain/usr/lib/swift-5.5/iphonesimulator  |  *                       |  Library path  |  no
+    ```
 
    make sure you Update Local File Cache.
 
      
-|  (In case you need to downgrade iOS SDK)
-|  ---------------------------------------
-|
-|  If for example Delphi work only with iOS 11.2 SDK
-|  If you install a version of xcode that not support iOS 11.2 SDK then this is how to do
-|  download xcode 9.2 from https://developer.apple.com/download/more/
-|  Unzip the downloaded file in /Users/zeus/Documents
-|  sudo cp -r /Users/zeus/Documents/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.2.sdk
-|  sudo cp -r /Users/zeus/Documents/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.2.sdk
-|  sudo /usr/libexec/PlistBuddy -c "Set :MinimumSDKVersion 11.2" /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Info.plist
-|  sudo /usr/libexec/PlistBuddy -c "Set :MinimumSDKVersion 11.2" /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Info.plist
+In case you need to downgrade iOS SDK
+-------------------------------------
 
-| (not need anymore)
-| ------------------
-|
-| if you receive the error    Error: "___isOSVersionAtLeast", referenced from:     ....
-| or if you don't find the c:\Dev\MagicFoundation\PlatformSDKs\iPhoneOS12.2.sdk\usr\lib\clang directory
-| then it's maybe the setting in tools, Options, SDK Manager is wrong. so look
-| in mac os for MainDrive > Applications > Xcode > Contents > Developer >
-| Toolchains > XcodeDefault.xctoolchain > usr > lib > clang > 10.0.1 then go
-| back in  Options, SDK Manager update the path of CLANG (ex 10.0.0) to 10.0.1
-| and click Update Local File Cache.
+If, for example, Delphi only works with the iOS 11.2 SDK, 
+and you install a version of Xcode that does not support 
+iOS 11.2 SDK, here’s how to proceed:
+
+  - download xcode 9.2 from https://developer.apple.com/download/more/
+  - Unzip the downloaded file in /Users/zeus/Documents
+  - sudo cp -r /Users/zeus/Documents/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.2.sdk
+  - sudo cp -r /Users/zeus/Documents/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.2.sdk
+  - sudo /usr/libexec/PlistBuddy -c "Set :MinimumSDKVersion 11.2" /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Info.plist
+  - sudo /usr/libexec/PlistBuddy -c "Set :MinimumSDKVersion 11.2" /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Info.plist
