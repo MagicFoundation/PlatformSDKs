@@ -119,96 +119,122 @@ However, this may fail due to known issues:
 IOS
 ---
 
-- Install the lastest macOS on a VMWare instance. 
-  Follow the instructions: {MagicFoundation}\Softwares\MacOS\README.md
-- In the macOS, from the app store, install XCode. You will need to 
-  enter your your apple ID email and password. 
-- Launch XCode and select macOS and iOS plateform
-- Install in Macos: c:\Program Files (x86)\Embarcadero\Studio\23.0\PAServer\PAServer23.0.pkg
-- Go in Finder > Applications > right click on PAServer 23 icon and select Open. if you receive
-  the error message saying "PAServer 23 damaged and cannot be opened" then click again on the 
-  "Open" button (Temporarily bypass security features by right-clicking the app and selecting Open twice)
-  https://iboysoft.com/news/app-is-damaged-and-cannot-be-opened.html
-- Go in Finder > Applications > drag and drop PAServer-23 icon to the desktop to create a short link
-- Launch PAServer-23
+### Set Up macOS in VMware
 
-- Finder > Applications > Utilities > Keychain Access (select Open Keychain Access in popup dialog)
-- Select "System" keychain in the left panel
-- Menu > Keychain Access > Certificate Assistant > Request a Certificate From a Certificate Authority:
-    - User Email Address: {Your apple ID Email}
-    - Common name: developer.apple.com
-    - CA Email Address: {leaveEmpty} 
-    - Save to Disk: {Checked}  
-  then save the certificate somewhere on the disk
-  
-- Go to https://developer.apple.com/account/resources/certificates/list and click (+) to add a new certificate
-- select Apple Development
-- select the certificate previously saved
-- download the new certificate
-- IMPORTANT: Select "System" keychain in the left panel of the Keychain Access utilities
-- Launch the Certificate by double-clicking it. It automatically loads in the Keychain Access application.
-- If asked, in the "add certificates" popup dialog select "System" Keychain
-- If you get "certificate is not trusted" red warning in keychain when looking the new installed certificate then install
-  also this certificate: https://www.apple.com/certificateauthority/AppleWWDRCAG3.cer
+  - Install the lastest macOS on a VMWare instance. 
+  - Follow the instructions: {MagicFoundation}\Softwares\MacOS\README.md
 
-- Go to https://developer.apple.com/account/resources/certificates/list and click (+) to add a new certificate
-- select Apple Distribution
-- select the certificate previously saved
-- download the new certificate
-- IMPORTANT: Select "System" keychain in the left panel of the Keychain Access utilities
-- Launch the Certificate by double-clicking it. It automatically loads in the Keychain Access application.
-- If asked, in the "add certificates" popup dialog select "System" Keychain
+### Install and Launch Xcode
 
-- Go to https://developer.apple.com/account/resources/certificates/list and click (+) to add a new certificate
-- select Mac App Distribution
-- select the certificate previously saved
-- download the new certificate
-- IMPORTANT: Select "System" keychain in the left panel of the Keychain Access utilities
-- Launch the Certificate by double-clicking it. It automatically loads in the Keychain Access application.
-- If asked, in the "add certificates" popup dialog select "System" Keychain
-- Exit keychain access 
+  - In the macOS, from the app store, install XCode. You will need to 
+    enter your your apple ID email and password. 
+  - Launch XCode and select macOS and iOS plateform
 
-- Go to https://developer.apple.com/account/resources/certificates/list and click (+) to add a new certificate
-- select Mac Installer Distribution
-- select the certificate previously saved
-- download the new certificate
-- IMPORTANT: Select "System" keychain in the left panel of the Keychain Access utilities
-- Launch the Certificate by double-clicking it. It automatically loads in the Keychain Access application.
-- If asked, in the "add certificates" popup dialog select "System" Keychain
+### Install PAServer
 
-- Exit keychain access 
+  - Install in Macos: c:\Program Files (x86)\Embarcadero\Studio\23.0\PAServer\PAServer23.0.pkg
+  - Go in Finder > Applications > right click on PAServer 23 icon and select Open. if you receive
+    the error message saying "PAServer 23 damaged and cannot be opened" then click again on the 
+    "Open" button (Temporarily bypass security features by right-clicking the app and selecting Open twice)
+    https://iboysoft.com/news/app-is-damaged-and-cannot-be-opened.html
+  - Go in Finder > Applications > drag and drop PAServer-23 icon to the desktop to create a short link
+  - Launch PAServer-23
 
-- Go to https://developer.apple.com/account/resources/identifiers/list and click (+) to add a new identifier
-- Select App IDs
-- Select App
-- Description: XC Wildcard
-  Bundle ID: .* (wildcard)
+### Configure Keychain Access
 
-- Go to https://developer.apple.com/account/resources/identifiers/list and click (+) to add a new identifier
-- Select App IDs
-- Select App
-- Description: {AppName} iOS App
-  Bundle ID: {Domain in lowercase}.{AppName in lowercase}.app.ios (explicit)
-  Associated Domains: YES
-  Sign In with Apple: YES (Enable as a primary App ID)
-  Push Notifications: YES
+  - Finder > Applications > Utilities > Keychain Access (select Open Keychain Access in popup dialog)
+  - Select "System" keychain in the left panel
+  - Menu > Keychain Access > Certificate Assistant > Request a Certificate From a Certificate Authority:
+      - User Email Address: {Your apple ID Email}
+      - Common name: developer.apple.com
+      - CA Email Address: {leaveEmpty} 
+      - Save to Disk: {Checked}  
+    then save the certificate somewhere on the disk
+    
+### Obtain & Install Apple Development Certificate
+    
+  - Go to https://developer.apple.com/account/resources/certificates/list and click (+) to add a new certificate
+  - select Apple Development
+  - select the certificate previously saved
+  - download the new certificate
+  - IMPORTANT: Select "System" keychain in the left panel of the Keychain Access utilities
+  - Launch the Certificate by double-clicking it. It automatically loads in the Keychain Access application.
+  - If asked, in the "add certificates" popup dialog select "System" Keychain
+  - If you get "certificate is not trusted" red warning in keychain when looking the new installed certificate then install
+    also this certificate: https://www.apple.com/certificateauthority/AppleWWDRCAG3.cer
 
-- Go to https://developer.apple.com/account/resources/profiles/list and click (+) to add a new profile
-- Select iOS App Development
-- Select XC Wildcard
-- Select All Certificate
-- Select All devices and include mac devices
-- Name it XC Wildcard (development)
-- Download your new provisioning profile
-- Double click on it to install it
-- Verify that the provisioning profile is well installed in /Users/zeus/Library/MobileDevice/Provisioning Profiles/
-  - Right click on each file and select "get info"
-  - delete the unwanted provisioning profiles
-- Open Xcode on the Mac and go to the Devices (Window > Devices).
-- Right-click the device (ex the iphone 7) and select Show Provisioning Profiles…
-- Delete all unwanted Provisioning Profile from your mobile device
-- Install an app from delphi in the mobile device. This will also install the provisioning 
-  profile in the mobile device.
+### Obtain & Install Apple Distribution Certificate
+
+  - Go to https://developer.apple.com/account/resources/certificates/list and click (+) to add a new certificate
+  - select Apple Distribution
+  - select the certificate previously saved
+  - download the new certificate
+  - IMPORTANT: Select "System" keychain in the left panel of the Keychain Access utilities
+  - Launch the Certificate by double-clicking it. It automatically loads in the Keychain Access application.
+  - If asked, in the "add certificates" popup dialog select "System" Keychain
+
+### Obtain & Install Mac App Distribution Certificate
+
+  - Go to https://developer.apple.com/account/resources/certificates/list and click (+) to add a new certificate
+  - select Mac App Distribution
+  - select the certificate previously saved
+  - download the new certificate
+  - IMPORTANT: Select "System" keychain in the left panel of the Keychain Access utilities
+  - Launch the Certificate by double-clicking it. It automatically loads in the Keychain Access application.
+  - If asked, in the "add certificates" popup dialog select "System" Keychain
+  - Exit keychain access 
+
+### Obtain & Install Mac Installer Distribution Certificate
+
+  - Go to https://developer.apple.com/account/resources/certificates/list and click (+) to add a new certificate
+  - select Mac Installer Distribution
+  - select the certificate previously saved
+  - download the new certificate
+  - IMPORTANT: Select "System" keychain in the left panel of the Keychain Access utilities
+  - Launch the Certificate by double-clicking it. It automatically loads in the Keychain Access application.
+  - If asked, in the "add certificates" popup dialog select "System" Keychain
+  - Exit keychain access 
+
+### Add an iOS Wildcard App ID
+
+  - Go to https://developer.apple.com/account/resources/identifiers/list and click (+) to add a new identifier
+  - Select App IDs
+  - Select App
+  - Description: XC Wildcard
+    Bundle ID: .* (wildcard)
+
+### Add an iOS Explicit App ID
+
+  - Go to https://developer.apple.com/account/resources/identifiers/list and click (+) to add a new identifier
+  - Select App IDs
+  - Select App
+  - Description: {AppName} iOS App
+    Bundle ID: {Domain in lowercase}.{AppName in lowercase}.app.ios (explicit)
+    Associated Domains: YES
+    Sign In with Apple: YES (Enable as a primary App ID)
+    Push Notifications: YES
+
+### Create iOS Development Provisioning Profile
+
+  - Go to https://developer.apple.com/account/resources/profiles/list and click (+) to add a new profile
+  - Select iOS App Development
+  - Select XC Wildcard
+  - Select All Certificate
+  - Select All devices and include mac devices
+  - Name it XC Wildcard (development)
+  - Download your new provisioning profile
+  - Double click on it to install it
+  - Verify that the provisioning profile is well installed in /Users/zeus/Library/MobileDevice/Provisioning Profiles/
+    - Right click on each file and select "get info"
+    - delete the unwanted provisioning profiles
+
+### Manage Provisioning Profiles & Deploy
+
+  - Open Xcode on the Mac and go to the Devices (Window > Devices).
+  - Right-click the device (ex the iphone 7) and select Show Provisioning Profiles…
+  - Delete all unwanted Provisioning Profile from your mobile device
+  - Install an app from delphi in the mobile device. This will also install the provisioning 
+    profile in the mobile device.
 
 
 Configure Delphi to use the framework SDKs
