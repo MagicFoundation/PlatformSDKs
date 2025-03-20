@@ -40,7 +40,8 @@ ANDROID
  "extras;google;google_play_services"^
  "extras;google;m2repository"^
  "extras;google;usb_driver"^
- "ndk;21.4.7075529"^
+ "ndk;27.1.12297006"^
+ "ndk;27.1.12297006"^
  "platform-tools"^
  "platforms;android-23"^
  "platforms;android-24"^
@@ -180,7 +181,7 @@ IOS
 Configure Delphi to use the framework SDKs
 ------------------------------------------
 
-* Tools > Options > IDE > Environment Variables > User overrides
+* Tools > Options > IDE > Environment Variables > User System Overrides
       > New
       > Variable Name: BDSPLATFORMSDKSDIR
       > Variable Value: c:\Dev\MagicFoundation\PlatformSDKs
@@ -228,45 +229,43 @@ Configure Delphi to use the framework SDKs
       !!WARNING!! Take a look of this post before to change anything below:
       https://stackoverflow.com/questions/60084704/aab-format-return-an-apk-without-armeabi-v7a-library-under-32-bit-devices
       Under Tools, Options, Deployment, SDK Manager you will need to add the following frameworks:
-      
+                  
       c:\Dev\MagicFoundation\PlatformSDKs\Android
-      c:\Dev\MagicFoundation\PlatformSDKs\Android\cmdline-tools\11.0\bin\avdmanager.bat
-      c:\Dev\MagicFoundation\PlatformSDKs\Android\platform-tools\adb.exe
+      c:\Dev\MagicFoundation\PlatformSDKs\Android\cmdline-tools\16.0\bin\avdmanager.bat
+      c:\Dev\MagicFoundation\PlatformSDKs\Android\platform-tools\Adb.exe
       c:\Dev\MagicFoundation\PlatformSDKs\Android\platforms\android-35
-      //--
-      c:\Dev\MagicFoundation\PlatformSDKs\Android\ndk\21.4.7075529
-      c:\Dev\MagicFoundation\PlatformSDKs\Android\ndk\21.4.7075529\toolchains\arm-linux-androideabi-4.9\prebuilt\windows-x86_64\bin\arm-linux-androideabi-ld.exe
-      c:\Dev\MagicFoundation\PlatformSDKs\Android\ndk\21.4.7075529\toolchains\arm-linux-androideabi-4.9\prebuilt\windows-x86_64\bin\arm-linux-androideabi-strip.exe
-      c:\Dev\MagicFoundation\PlatformSDKs\Android\ndk\21.4.7075529\platforms\android-23
-      c:\Dev\MagicFoundation\PlatformSDKs\Android\ndk\21.4.7075529\platforms\android-23\arch-arm\usr\lib
-      c:\Dev\MagicFoundation\PlatformSDKs\Android\ndk\21.4.7075529\sources\cxx-stl\llvm-libc++\libs\armeabi-v7a;c:\Dev\MagicFoundation\PlatformSDKs\Android\ndk\21.4.7075529\platforms\android-23\arch-arm\usr\lib;c:\Dev\MagicFoundation\PlatformSDKs\Android\ndk\21.4.7075529\toolchains\arm-linux-androideabi-4.9\prebuilt\windows-x86_64\lib\gcc\arm-linux-androideabi\4.9.x;c:\Dev\MagicFoundation\PlatformSDKs\Android\ndk\21.4.7075529\toolchains\arm-linux-androideabi-4.9\prebuilt\windows-x86_64\arm-linux-androideabi\lib
-      //--     
+      
+      c:\Dev\MagicFoundation\PlatformSDKs\Android\ndk\27.1.12297006
+      c:\Dev\MagicFoundation\PlatformSDKs\Android\ndk\27.1.12297006\toolchains\llvm\prebuilt\windows-x86_64\bin\ld.lld.exe
+      c:\Dev\MagicFoundation\PlatformSDKs\Android\ndk\27.1.12297006\toolchains\llvm\prebuilt\windows-x86_64\bin\llvm-strip.exe
+      c:\Dev\MagicFoundation\PlatformSDKs\Android\ndk\27.1.12297006\toolchains\llvm\prebuilt\windows-x86_64\lib\clang\18\lib\linux\libclang_rt.builtins-arm-android.a
+      c:\Dev\MagicFoundation\PlatformSDKs\Android\ndk\27.1.12297006\toolchains\llvm\prebuilt\windows-x86_64\sysroot\usr\lib\arm-linux-androideabi\23;c:\Dev\MagicFoundation\PlatformSDKs\Android\ndk\27.1.12297006\toolchains\llvm\prebuilt\windows-x86_64\sysroot\usr\lib\arm-linux-androideabi
+      
       C:\Program Files\Eclipse Adoptium\jdk-17.0.12.7-hotspot\bin\keytool.exe
       C:\Program Files\Eclipse Adoptium\jdk-17.0.12.7-hotspot\bin\jarsigner.exe
-                     
+                                  
 *  Tools > Options > Deployment > SDK Manager
       > Add
       > android 64 bit
 
       !!WARNING!! Take a look of this post before to change anything below:
       https://stackoverflow.com/questions/60084704/aab-format-return-an-apk-without-armeabi-v7a-library-under-32-bit-devices
-      Under Tools, Options, Deployment, SDK Manager you will need to add the following frameworks:
+      Under Tools, Options, Deployment, SDK Manager you will need to add the following frameworks:      
 
       c:\Dev\MagicFoundation\PlatformSDKs\Android
-      c:\Dev\MagicFoundation\PlatformSDKs\Android\cmdline-tools\11.0\bin\avdmanager.bat
-      c:\Dev\MagicFoundation\PlatformSDKs\Android\platform-tools\adb.exe
+      c:\Dev\MagicFoundation\PlatformSDKs\Android\cmdline-tools\16.0\bin\avdmanager.bat
+      c:\Dev\MagicFoundation\PlatformSDKs\Android\platform-tools\Adb.exe
       c:\Dev\MagicFoundation\PlatformSDKs\Android\platforms\android-35
-      //--
-      c:\Dev\MagicFoundation\PlatformSDKs\Android\ndk\21.4.7075529
-      c:\Dev\MagicFoundation\PlatformSDKs\Android\ndk\21.4.7075529\toolchains\aarch64-linux-android-4.9\prebuilt\windows-x86_64\aarch64-linux-android\bin\ld.exe
-      c:\Dev\MagicFoundation\PlatformSDKs\Android\ndk\21.4.7075529\toolchains\aarch64-linux-android-4.9\prebuilt\windows-x86_64\aarch64-linux-android\bin\strip.exe
-      c:\Dev\MagicFoundation\PlatformSDKs\Android\ndk\21.4.7075529\platforms\android-23
-      c:\Dev\MagicFoundation\PlatformSDKs\Android\ndk\21.4.7075529\platforms\android-23\arch-arm64\usr\lib
-      c:\Dev\MagicFoundation\PlatformSDKs\Android\ndk\21.4.7075529\platforms\android-23\arch-arm64\usr\lib;c:\Dev\MagicFoundation\PlatformSDKs\Android\ndk\21.4.7075529\sources\cxx-stl\llvm-libc++\libs\arm64-v8a
-      //--     
+      
+      c:\Dev\MagicFoundation\PlatformSDKs\Android\ndk\27.1.12297006
+      c:\Dev\MagicFoundation\PlatformSDKs\Android\ndk\27.1.12297006\toolchains\llvm\prebuilt\windows-x86_64\bin\ld.lld.exe
+      c:\Dev\MagicFoundation\PlatformSDKs\Android\ndk\27.1.12297006\toolchains\llvm\prebuilt\windows-x86_64\bin\llvm-strip.exe
+      c:\Dev\MagicFoundation\PlatformSDKs\Android\ndk\27.1.12297006\toolchains\llvm\prebuilt\windows-x86_64\lib\clang\18\lib\linux\libclang_rt.builtins-aarch64-android.a
+      c:\Dev\MagicFoundation\PlatformSDKs\Android\ndk\27.1.12297006\toolchains\llvm\prebuilt\windows-x86_64\sysroot\usr\lib\aarch64-linux-android\23;c:\Dev\MagicFoundation\PlatformSDKs\Android\ndk\27.1.12297006\toolchains\llvm\prebuilt\windows-x86_64\sysroot\usr\lib\aarch64-linux-android
+      
       C:\Program Files\Eclipse Adoptium\jdk-17.0.12.7-hotspot\bin\keytool.exe
       C:\Program Files\Eclipse Adoptium\jdk-17.0.12.7-hotspot\bin\jarsigner.exe
-      
+
 *  Under Tools, Options, SDK Manager you will need to add the following frameworks for ios64 and ios64 Simulator :
       
       Path on remote machine                                                                           |  File mask               |  Path Type     |  Include subdirectories
@@ -293,22 +292,6 @@ Configure Delphi to use the framework SDKs
 
    make sure you Update Local File Cache.
 
-   https://quality.embarcadero.com/browse/RSP-38700
-   You will need to manually copy the content of (assuming c:\Dev\MagicFoundation\PlatformSDKs is your BDSPLATFORMSDKSDIR)
-
-   for ios64:
-      c:\Dev\MagicFoundation\PlatformSDKs\iPhoneOS17.5.sdk\Applications\Xcode.app\Contents\Developer\Toolchains\XcodeDefault.xctoolchain\usr\lib\swift  to  c:\Dev\MagicFoundation\PlatformSDKs\iPhoneOS17.5.sdk\usr\lib\swift
-      c:\Dev\MagicFoundation\PlatformSDKs\iPhoneOS17.5.sdk\Applications\Xcode.app\Contents\Developer\Toolchains\XcodeDefault.xctoolchain\usr\lib\swift-5.0  to  c:\Dev\MagicFoundation\PlatformSDKs\iPhoneOS17.5.sdk\usr\lib\swift-5.0
-      c:\Dev\MagicFoundation\PlatformSDKs\iPhoneOS17.5.sdk\Applications\Xcode.app\Contents\Developer\Toolchains\XcodeDefault.xctoolchain\usr\lib\swift-5.5  to  c:\Dev\MagicFoundation\PlatformSDKs\iPhoneOS17.5.sdk\usr\lib\swift-5.5
-
-   for ios64 SIMULATOR:
-      c:\Dev\MagicFoundation\PlatformSDKs\iPhoneSimulator17.5.sdk\Applications\Xcode.app\Contents\Developer\Toolchains\XcodeDefault.xctoolchain\usr\lib\swift  to  c:\Dev\MagicFoundation\PlatformSDKs\iPhoneSimulator17.5.sdk\usr\lib\swift
-      c:\Dev\MagicFoundation\PlatformSDKs\iPhoneSimulator17.5.sdk\Applications\Xcode.app\Contents\Developer\Toolchains\XcodeDefault.xctoolchain\usr\lib\swift-5.0  to  c:\Dev\MagicFoundation\PlatformSDKs\iPhoneSimulator17.5.sdk\usr\lib\swift-5.0
-      c:\Dev\MagicFoundation\PlatformSDKs\iPhoneSimulator17.5.sdk\Applications\Xcode.app\Contents\Developer\Toolchains\XcodeDefault.xctoolchain\usr\lib\swift-5.5  to  c:\Dev\MagicFoundation\PlatformSDKs\iPhoneSimulator17.5.sdk\usr\lib\swift-5.5
-      
-     
-     
-     
      
 |  (In case you need to downgrade iOS SDK)
 |  ---------------------------------------
