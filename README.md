@@ -28,7 +28,7 @@ c:\Program Files\Eclipse Adoptium\jdk-11.0.16.101-hotspot\
 c:\Program Files\Eclipse Adoptium\jdk-17.0.12.7-hotspot\
 ```
 
-Next, **add/update** in **system environment variables** (using the GUI�**do not** use `setx` as it might truncate the PATH to 1024 chars):
+Next, **add/update** in **system environment variables** (using the GUI—**do not** use `setx` as it might truncate the PATH to 1024 chars):
 
 ```
 c:\Program Files\Eclipse Adoptium\jdk-17.0.12.7-hotspot\bin\
@@ -124,6 +124,38 @@ IOS
   - Install the lastest macOS on a VMWare instance. 
   - Follow the instructions: {MagicFoundation}\Softwares\MacOS\README.md
 
+### Enable Remote Login on macOS
+
+On your macOS, go to System Settings (or System Preferences on older 
+versions) → Sharing → Remote Login. Enable it and make sure your user 
+is allowed to connect.
+
+### Set Up Your SSH Folder and Authorized Keys
+
+  - **Generate an SSH Key on Windows:**
+      - Open a command prompt or PowerShell on Windows.
+      - Run `ssh-keygen` to create a public/private key pair. By default, the keys are stored in C:\Users\zeus\.ssh\
+
+  - **Copy Your Public Key to macOS:**
+      - Open the file `C:\Users\zeus\.ssh\id_xxx.pub` (replace `id_xxx.pub` with your actual public key filename) in a text editor and copy its content.
+      - On your macOS, open Terminal and run:
+        ```
+        mkdir -p ~/.ssh
+        chmod 700 ~/.ssh
+        touch ~/.ssh/authorized_keys
+        chmod 600 ~/.ssh/authorized_keys
+        open -e ~/.ssh/authorized_keys
+        ```
+      - Paste the copied public key into the opened `authorized_keys` file, then save and close it.
+
+  - **Establish the Connection:**
+      - On Windows, open a command prompt or PowerShell and run:
+        ```
+        ssh {username}@{macosip}
+        ```
+        Replace `{username}` with your macOS username and `{macosip}` with your macOS IP address.
+      - The first time you connect, you'll be prompted to confirm the host's fingerprint; type `yes` to add it to your known_hosts.
+  
 ### Install and Launch Xcode
 
   - In the macOS, from the app store, install XCode. You will need to 
@@ -146,7 +178,7 @@ IOS
   - Select "System" keychain in the left panel
   - Menu > Keychain Access > Certificate Assistant > Request a Certificate From a Certificate Authority:
       - User Email Address: {Your apple ID Email}
-      - Common name: developer.apple.com
+      - Common name: {CompanyName}.developer.apple.com
       - CA Email Address: {leaveEmpty} 
       - Save to Disk: {Checked}
       - Save the certificate somewhere on the disk
@@ -208,20 +240,34 @@ IOS
   - Go to https://developer.apple.com/account/resources/identifiers/list and click (+) to add a new identifier
   - Select App IDs
   - Select App
-      - Description: {AppName} iOS App  
-      - Bundle ID: {Domain in lowercase}.{AppName in lowercase}.app.ios (explicit)  
+      - Description: {AppName}  
+      - Bundle ID (explicit): {Domain in lowercase}.{AppName in lowercase}.app  
       - Associated Domains: YES  
       - Sign In with Apple: YES (Enable as a primary App ID)  
       - Push Notifications: YES  
 
-### Create iOS Development Provisioning Profile
+### Create iOS App Development Provisioning Profile
 
   - Go to https://developer.apple.com/account/resources/profiles/list and click (+) to add a new profile
   - Select iOS App Development
   - Select XC Wildcard
   - Select All Certificate
   - Select All devices and include mac devices
-  - Name it XC Wildcard (development)
+  - Name it XC Wildcard
+  - Download your new provisioning profile
+  - Double click on it to install it
+  - Verify that the provisioning profile is well installed in /Users/zeus/Library/MobileDevice/Provisioning Profiles/
+      - Right click on each file and select "get info"
+      - delete the unwanted provisioning profiles
+      
+### Create App Store Connect Provisioning Profile
+
+  - Go to https://developer.apple.com/account/resources/profiles/list and click (+) to add a new profile
+  - Select App Store Connect
+  - Select your App ID
+  - Select the "Distribution" Certificate
+  - Name it {Domain in lowercase}.{AppName in lowercase}.app 
+      - Note: It doesn't matter if several profiles have the same name—this is already the case with certificates
   - Download your new provisioning profile
   - Double click on it to install it
   - Verify that the provisioning profile is well installed in /Users/zeus/Library/MobileDevice/Provisioning Profiles/
@@ -231,7 +277,7 @@ IOS
 ### Manage Provisioning Profiles & Deploy
 
   - Open Xcode on the Mac and go to the Devices (Window > Devices).
-  - Right-click the device (ex the iphone 7) and select Show Provisioning Profiles�
+  - Right-click the device (ex the iphone 7) and select Show Provisioning Profiles…
   - Delete all unwanted Provisioning Profile from your mobile device
   - Install an app from delphi in the mobile device. This will also install the provisioning 
     profile in the mobile device.
@@ -371,7 +417,7 @@ In case you need to downgrade iOS SDK
 
 If, for example, Delphi only works with the iOS 11.2 SDK, 
 and you install a version of Xcode that does not support 
-iOS 11.2 SDK, here�s how to proceed:
+iOS 11.2 SDK, here’s how to proceed:
 
   - download xcode 9.2 from https://developer.apple.com/download/more/
   - Unzip the downloaded file in `/Users/zeus/Documents`
