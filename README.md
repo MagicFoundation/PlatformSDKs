@@ -126,18 +126,20 @@ IOS
 
 ### Enable Remote Login on macOS
 
-On your macOS, go to System Settings (or System Preferences on older 
-versions) → Sharing → Remote Login. Enable it and make sure your user 
-is allowed to connect.
+  - On your macOS, go to System Settings (or System Preferences on older 
+    versions) → Sharing → Remote Login. Enable it and make sure your user 
+    is allowed to connect.
 
 ### Set Up Your SSH Folder and Authorized Keys
 
   - **Generate an SSH Key on Windows:**
       - Open a command prompt or PowerShell on Windows.
-      - Run `ssh-keygen` to create a public/private key pair. By default, the keys are stored in C:\Users\zeus\.ssh\
+      - Run `ssh-keygen` to create a public/private key pair. By default, the 
+        keys are stored in C:\Users\zeus\.ssh\
 
   - **Copy Your Public Key to macOS:**
-      - Open the file `C:\Users\zeus\.ssh\id_xxx.pub` (replace `id_xxx.pub` with your actual public key filename) in a text editor and copy its content.
+      - Open the file `C:\Users\zeus\.ssh\id_xxx.pub` (replace `id_xxx.pub` with 
+        your actual public key filename) in a text editor and copy its content.
       - On your macOS, open Terminal and run:
         ```
         mkdir -p ~/.ssh
@@ -146,7 +148,8 @@ is allowed to connect.
         chmod 600 ~/.ssh/authorized_keys
         open -e ~/.ssh/authorized_keys
         ```
-      - Paste the copied public key into the opened `authorized_keys` file, then save and close it.
+      - Paste the copied public key into the opened `authorized_keys` file, then 
+        save and close it.
 
   - **Establish the Connection:**
       - On Windows, open a command prompt or PowerShell and run:
@@ -154,7 +157,8 @@ is allowed to connect.
         ssh {username}@{macosip}
         ```
         Replace `{username}` with your macOS username and `{macosip}` with your macOS IP address.
-      - The first time you connect, you'll be prompted to confirm the host's fingerprint; type `yes` to add it to your known_hosts.
+      - The first time you connect, you'll be prompted to confirm the host's 
+        fingerprint; type `yes` to add it to your known_hosts.
   
 ### Install and Launch Xcode
 
