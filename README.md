@@ -259,10 +259,10 @@ IOS
   - Select All devices and include mac devices
   - Name it XC Wildcard
   - Download your new provisioning profile
-  - Double click on it to install it
-  - Verify that the provisioning profile is well installed in /Users/zeus/Library/MobileDevice/Provisioning Profiles/
-      - Right click on each file and select "get info"
-      - delete the unwanted provisioning profiles
+  - copy the new provisioning profile to /Users/zeus/Library/Developer/Xcode/UserData/Provisioning Profiles/ 
+    (in xcode < 16 in /Users/zeus/Library/MobileDevice/Provisioning Profiles/)
+  - delete the unwanted provisioning profiles
+  - In case Delphi doesn't detect a profile, restarting macOS usually resolves the issue.
       
 ### Create App Store Connect Provisioning Profile
 
@@ -273,10 +273,10 @@ IOS
   - Name it {Domain in lowercase}.{AppName in lowercase}.app 
       - Note: It doesn't matter if several profiles have the same name—this is already the case with certificates
   - Download your new provisioning profile
-  - Double click on it to install it
-  - Verify that the provisioning profile is well installed in /Users/zeus/Library/MobileDevice/Provisioning Profiles/
-      - Right click on each file and select "get info"
-      - delete the unwanted provisioning profiles
+  - copy the new provisioning profile to /Users/zeus/Library/Developer/Xcode/UserData/Provisioning Profiles/ 
+    (in xcode < 16 in /Users/zeus/Library/MobileDevice/Provisioning Profiles/)
+  - delete the unwanted provisioning profiles
+  - In case Delphi doesn't detect a profile, restarting macOS usually resolves the issue.
 
 ### Manage Provisioning Profiles & Deploy
 
