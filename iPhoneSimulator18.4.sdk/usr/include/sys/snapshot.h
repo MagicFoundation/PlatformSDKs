@@ -55,8 +55,6 @@ int fs_snapshot_rename(int, const char *, const char *, uint32_t) __OSX_AVAILABL
 #define SNAPSHOT_MNT_IGNORE_OWNERSHIP   0x00200000    /* same as MNT_IGNORE_OWNERSHIP */
 #define SNAPSHOT_MNT_NOFOLLOW           0x08000000    /* same as MNT_NOFOLLOW */
 
-#define SNAPSHOT_MNT_VALIDMASK          0x08300018
-
 
 int fs_snapshot_mount(int, const char *, const char *, uint32_t) __OSX_AVAILABLE(10.12) __IOS_AVAILABLE(10.0)       __TVOS_AVAILABLE(10.0) __WATCHOS_AVAILABLE(3.0);
 
