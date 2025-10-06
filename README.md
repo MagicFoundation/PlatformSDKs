@@ -13,31 +13,32 @@ run `Pack.bat` to compress those big files.
 ANDROID
 -------
  
-### Install OpenJDK Binaries 11 and 17  
+### Install OpenJDK Binaries 11, 17 and 21  
 
 Download **ZIP package** from [Adoptium](https://adoptium.net/)  
   - **Operating System**: Windows  
   - **Architecture**: x64  
   - **Package Type**: jdk  
-  - **Versions**: 11 and 17  
+  - **Versions**: 11, 17 and 21  
 
 Then **unzip** them to:
 
 ```
 c:\Program Files\Eclipse Adoptium\jdk-11.0.16.101-hotspot\
 c:\Program Files\Eclipse Adoptium\jdk-17.0.12.7-hotspot\
+c:\Program Files\Eclipse Adoptium\jdk-21.0.8.9-hotspot\
 ```
 
 Next, **add/update** in **system environment variables** (using the GUI—**do not** use `setx` as it might truncate the PATH to 1024 chars):
 
 ```
-c:\Program Files\Eclipse Adoptium\jdk-17.0.12.7-hotspot\bin\
+c:\Program Files\Eclipse Adoptium\jdk-21.0.8.9-hotspot\bin\
 ```
 
 Finally, **add/update** system environment variable `JAVA_HOME`:
 
 ```
-JAVA_HOME = c:\Program Files\Eclipse Adoptium\jdk-17.0.12.7-hotspot\
+JAVA_HOME = c:\Program Files\Eclipse Adoptium\jdk-21.0.8.9-hotspot\
 ```
    
 ### List installed and available packages  
@@ -67,7 +68,6 @@ JAVA_HOME = c:\Program Files\Eclipse Adoptium\jdk-17.0.12.7-hotspot\
  "extras;google;google_play_services"^
  "extras;google;m2repository"^
  "extras;google;usb_driver"^
- "ndk;27.1.12297006"^
  "ndk;27.1.12297006"^
  "platform-tools"^
  "platforms;android-23"^
@@ -102,7 +102,7 @@ JAVA_HOME = c:\Program Files\Eclipse Adoptium\jdk-17.0.12.7-hotspot\
 ### Uninstall a package 
 
 ```
-"c:\Dev\MagicFoundation\PlatformSDKs\Android\cmdline-tools\16.0\bin\sdkmanager.bat" --sdk_root=c:\Dev\MagicFoundation\PlatformSDKs\Android\ --uninstall "build-tools;33.0.1"
+"c:\Dev\MagicFoundation\PlatformSDKs\Android\cmdline-tools\16.0\bin\sdkmanager.bat" --sdk_root=c:\Dev\MagicFoundation\PlatformSDKs\Android\ --uninstall "ndk;21.4.7075529"
 ```
    
 ### Create an emulator (doesn't work anymore on Intel)
@@ -168,13 +168,13 @@ IOS
 
 ### Install PAServer
 
-  - Install in Macos: c:\Program Files (x86)\Embarcadero\Studio\23.0\PAServer\PAServer23.0.pkg
-  - Go in Finder > Applications > right click on PAServer 23 icon and select Open. if you receive
-    the error message saying "PAServer 23 damaged and cannot be opened" then click again on the 
+  - Install in Macos: c:\Program Files (x86)\Embarcadero\Studio\37.0\PAServer\PAServer37.0.pkg
+  - Go in Finder > Applications > right click on PAServer 37 icon and select Open. if you receive
+    the error message saying "PAServer 37 damaged and cannot be opened" then click again on the 
     "Open" button (Temporarily bypass security features by right-clicking the app and selecting Open twice)
     https://iboysoft.com/news/app-is-damaged-and-cannot-be-opened.html
-  - Go in Finder > Applications > drag and drop PAServer-23 icon to the desktop to create a short link
-  - Launch PAServer-23
+  - Go in Finder > Applications > drag and drop PAServer-37 icon to the desktop to create a short link
+  - Launch PAServer-37
 
 ### Configure Keychain Access
 
@@ -343,7 +343,7 @@ Configure Delphi to use the framework SDKs
       ```
       c:\Dev\MagicFoundation\PlatformSDKs\Android
       c:\Dev\MagicFoundation\PlatformSDKs\Android\cmdline-tools\16.0\bin\avdmanager.bat
-      c:\Dev\MagicFoundation\PlatformSDKs\Android\platform-tools\Adb.exe
+      c:\Dev\MagicFoundation\PlatformSDKs\Android\platform-tools\adb.exe
       c:\Dev\MagicFoundation\PlatformSDKs\Android\platforms\android-35
 
       c:\Dev\MagicFoundation\PlatformSDKs\Android\ndk\27.1.12297006
@@ -352,8 +352,8 @@ Configure Delphi to use the framework SDKs
       c:\Dev\MagicFoundation\PlatformSDKs\Android\ndk\27.1.12297006\toolchains\llvm\prebuilt\windows-x86_64\lib\clang\18\lib\linux\libclang_rt.builtins-arm-android.a
       c:\Dev\MagicFoundation\PlatformSDKs\Android\ndk\27.1.12297006\toolchains\llvm\prebuilt\windows-x86_64\sysroot\usr\lib\arm-linux-androideabi\23;c:\Dev\MagicFoundation\PlatformSDKs\Android\ndk\27.1.12297006\toolchains\llvm\prebuilt\windows-x86_64\sysroot\usr\lib\arm-linux-androideabi
 
-      C:\Program Files\Eclipse Adoptium\jdk-17.0.12.7-hotspot\bin\keytool.exe
-      C:\Program Files\Eclipse Adoptium\jdk-17.0.12.7-hotspot\bin\jarsigner.exe
+      c:\Program Files\Eclipse Adoptium\jdk-21.0.8.9-hotspot\bin\keytool.exe
+      c:\Program Files\Eclipse Adoptium\jdk-21.0.8.9-hotspot\bin\jarsigner.exe
       ```
                                
 * Tools > Options > Deployment > SDK Manager
@@ -368,7 +368,7 @@ Configure Delphi to use the framework SDKs
       ```
       c:\Dev\MagicFoundation\PlatformSDKs\Android
       c:\Dev\MagicFoundation\PlatformSDKs\Android\cmdline-tools\16.0\bin\avdmanager.bat
-      c:\Dev\MagicFoundation\PlatformSDKs\Android\platform-tools\Adb.exe
+      c:\Dev\MagicFoundation\PlatformSDKs\Android\platform-tools\adb.exe
       c:\Dev\MagicFoundation\PlatformSDKs\Android\platforms\android-35
 
       c:\Dev\MagicFoundation\PlatformSDKs\Android\ndk\27.1.12297006
@@ -377,8 +377,8 @@ Configure Delphi to use the framework SDKs
       c:\Dev\MagicFoundation\PlatformSDKs\Android\ndk\27.1.12297006\toolchains\llvm\prebuilt\windows-x86_64\lib\clang\18\lib\linux\libclang_rt.builtins-aarch64-android.a
       c:\Dev\MagicFoundation\PlatformSDKs\Android\ndk\27.1.12297006\toolchains\llvm\prebuilt\windows-x86_64\sysroot\usr\lib\aarch64-linux-android\23;c:\Dev\MagicFoundation\PlatformSDKs\Android\ndk\27.1.12297006\toolchains\llvm\prebuilt\windows-x86_64\sysroot\usr\lib\aarch64-linux-android
 
-      C:\Program Files\Eclipse Adoptium\jdk-17.0.12.7-hotspot\bin\keytool.exe
-      C:\Program Files\Eclipse Adoptium\jdk-17.0.12.7-hotspot\bin\jarsigner.exe
+      c:\Program Files\Eclipse Adoptium\jdk-21.0.8.9-hotspot\bin\keytool.exe
+      c:\Program Files\Eclipse Adoptium\jdk-21.0.8.9-hotspot\bin\jarsigner.exe
       ```
 
 * Under Tools, Options, SDK Manager you will need to add the following frameworks for ios64 and ios64 Simulator:
@@ -393,6 +393,7 @@ Configure Delphi to use the framework SDKs
   $(SDKROOT)/System/Library/Frameworks                                                             |  Photos                  |  Framework     |  no
   $(SDKROOT)/System/Library/Frameworks                                                             |  AuthenticationServices  |  Framework     |  no
   $(SDKROOT)/System/Library/Frameworks                                                             |  BackgroundTasks         |  Framework     |  no
+  $(SDKROOT)/System/Library/Frameworks                                                             |  AppTrackingTransparency |  Framework     |  no
   ```
 
   - for ios64 also add:
