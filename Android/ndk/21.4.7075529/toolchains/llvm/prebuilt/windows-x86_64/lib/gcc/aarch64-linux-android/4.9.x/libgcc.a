@@ -1,1 +1,0 @@
-INPUT(-lcompiler_rt-extras -lgcc_real)

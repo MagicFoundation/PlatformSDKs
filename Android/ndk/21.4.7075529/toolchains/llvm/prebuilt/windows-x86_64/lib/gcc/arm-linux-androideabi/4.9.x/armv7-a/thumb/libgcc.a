@@ -1,1 +1,0 @@
-INPUT(-lunwind -lcompiler_rt-extras -lgcc_real -ldl)
