@@ -178,7 +178,8 @@ IOS
 
 ### Configure Keychain Access
 
-  - Finder > Applications > Utilities > Keychain Access (select Open Keychain Access in popup dialog)
+  - ⌘ (or on windows ⊞) + Space and type Keychain Access
+  - Select open Keychain Access
   - Select "System" keychain in the left panel
   - Menu > Keychain Access > Certificate Assistant > Request a Certificate From a Certificate Authority:
       - User Email Address: {Your apple ID Email}
@@ -391,6 +392,7 @@ Configure Delphi to use the framework SDKs
   $(SDKROOT)/System/Library/Frameworks                                                             |  Accounts                |  Framework     |  no
   $(SDKROOT)/System/Library/Frameworks                                                             |  AVKit                   |  Framework     |  no
   $(SDKROOT)/System/Library/Frameworks                                                             |  Photos                  |  Framework     |  no
+  $(SDKROOT)/System/Library/Frameworks                                                             |  PhotosUI                |  Framework     |  no
   $(SDKROOT)/System/Library/Frameworks                                                             |  AuthenticationServices  |  Framework     |  no
   $(SDKROOT)/System/Library/Frameworks                                                             |  BackgroundTasks         |  Framework     |  no
   $(SDKROOT)/System/Library/Frameworks                                                             |  AppTrackingTransparency |  Framework     |  no
