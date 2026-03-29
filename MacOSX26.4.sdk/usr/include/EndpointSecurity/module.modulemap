@@ -1,0 +1,8 @@
+module EndpointSecurity [system] {
+	header "EndpointSecurity.h"
+	header "ESTypes.h"
+	header "ESMessageCore.h"
+	header "ESMessage.h"
+	header "ESClient.h"
+	export *
+}
