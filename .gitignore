@@ -1,3 +1,5 @@
+Android/.sdk
+Android/.temp
 Android/ndk/27.1.12297006/toolchains/llvm/prebuilt/windows-x86_64/bin/liblldb.dll
 Android/ndk/27.1.12297006/toolchains/llvm/prebuilt/windows-x86_64/lib/python3.11/site-packages/lldb/_lldb.exe
 Android/ndk/27.1.12297006/toolchains/llvm/prebuilt/windows-x86_64/bin/clang.exe

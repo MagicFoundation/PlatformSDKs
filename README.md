@@ -44,13 +44,13 @@ JAVA_HOME = c:\Program Files\Eclipse Adoptium\jdk-21.0.8.9-hotspot\
 ### List installed and available packages  
 
 ```
-"c:\Dev\MagicFoundation\PlatformSDKs\Android\cmdline-tools\latest\bin\sdkmanager.bat" --sdk_root=c:\Dev\MagicFoundation\PlatformSDKs\Android\ --list
+"C:\Dev\MagicFoundation\PlatformSDKs\Android\cmdline-tools\latest\bin\android.exe" --sdk="C:\Dev\MagicFoundation\PlatformSDKs\Android" sdk list --all
 ```
    
 ### Reinstall all the Android SDK/NDK 
 
 ```
-"c:\Dev\MagicFoundation\PlatformSDKs\Android\cmdline-tools\latest\bin\sdkmanager.bat"^
+"C:\Dev\MagicFoundation\PlatformSDKs\Android\cmdline-tools\latest\bin\android.exe" --sdk="C:\Dev\MagicFoundation\PlatformSDKs\Android" sdk install ^
  "build-tools;36.1.0"^
  "cmdline-tools;latest"^
  "extras;android;m2repository"^
@@ -60,17 +60,20 @@ JAVA_HOME = c:\Program Files\Eclipse Adoptium\jdk-21.0.8.9-hotspot\
  "ndk;27.1.12297006"^
  "platform-tools"^
  "platforms;android-36.1"^
- "sources;android-36.1"^
- --sdk_root=c:\Dev\MagicFoundation\PlatformSDKs\Android\
-```
+ "sources;android-36.1" 
+
+NOTE: If you need to update cmdline-tools, first copy 
+C:\Dev\MagicFoundation\PlatformSDKs\Android\cmdline-tools to a temporary directory 
+(e.g., C:\Temp\cmdline-tools), then run the previous command using 
+sdkmanager.bat from that temporary directory.
 
 ### Uninstall a package 
 
 ```
-"c:\Dev\MagicFoundation\PlatformSDKs\Android\cmdline-tools\latest\bin\sdkmanager.bat" --sdk_root=c:\Dev\MagicFoundation\PlatformSDKs\Android\ --uninstall "ndk;21.4.7075529"
+"C:\Dev\MagicFoundation\PlatformSDKs\Android\cmdline-tools\latest\bin\android.exe" --sdk="C:\Dev\MagicFoundation\PlatformSDKs\Android" sdk remove "ndk/21.4.7075529"
 ```
-    
- 
+
+
 IOS
 ---
 
@@ -308,7 +311,7 @@ Configure Delphi to use the framework SDKs
       c:\Dev\MagicFoundation\PlatformSDKs\Android\ndk\27.1.12297006\toolchains\llvm\prebuilt\windows-x86_64\bin\ld.lld.exe
       c:\Dev\MagicFoundation\PlatformSDKs\Android\ndk\27.1.12297006\toolchains\llvm\prebuilt\windows-x86_64\bin\llvm-strip.exe
       c:\Dev\MagicFoundation\PlatformSDKs\Android\ndk\27.1.12297006\toolchains\llvm\prebuilt\windows-x86_64\lib\clang\18\lib\linux\libclang_rt.builtins-arm-android.a
-      c:\Dev\MagicFoundation\PlatformSDKs\Android\ndk\27.1.12297006\toolchains\llvm\prebuilt\windows-x86_64\sysroot\usr\lib\arm-linux-androideabi\23;c:\Dev\MagicFoundation\PlatformSDKs\Android\ndk\27.1.12297006\toolchains\llvm\prebuilt\windows-x86_64\sysroot\usr\lib\arm-linux-androideabi
+      c:\Dev\MagicFoundation\PlatformSDKs\Android\ndk\27.1.12297006\toolchains\llvm\prebuilt\windows-x86_64\sysroot\usr\lib\arm-linux-androideabi\24;c:\Dev\MagicFoundation\PlatformSDKs\Android\ndk\27.1.12297006\toolchains\llvm\prebuilt\windows-x86_64\sysroot\usr\lib\arm-linux-androideabi
 
       c:\Program Files\Eclipse Adoptium\jdk-21.0.8.9-hotspot\bin\keytool.exe
       c:\Program Files\Eclipse Adoptium\jdk-21.0.8.9-hotspot\bin\jarsigner.exe
@@ -333,7 +336,7 @@ Configure Delphi to use the framework SDKs
       c:\Dev\MagicFoundation\PlatformSDKs\Android\ndk\27.1.12297006\toolchains\llvm\prebuilt\windows-x86_64\bin\ld.lld.exe
       c:\Dev\MagicFoundation\PlatformSDKs\Android\ndk\27.1.12297006\toolchains\llvm\prebuilt\windows-x86_64\bin\llvm-strip.exe
       c:\Dev\MagicFoundation\PlatformSDKs\Android\ndk\27.1.12297006\toolchains\llvm\prebuilt\windows-x86_64\lib\clang\18\lib\linux\libclang_rt.builtins-aarch64-android.a
-      c:\Dev\MagicFoundation\PlatformSDKs\Android\ndk\27.1.12297006\toolchains\llvm\prebuilt\windows-x86_64\sysroot\usr\lib\aarch64-linux-android\23;c:\Dev\MagicFoundation\PlatformSDKs\Android\ndk\27.1.12297006\toolchains\llvm\prebuilt\windows-x86_64\sysroot\usr\lib\aarch64-linux-android
+      c:\Dev\MagicFoundation\PlatformSDKs\Android\ndk\27.1.12297006\toolchains\llvm\prebuilt\windows-x86_64\sysroot\usr\lib\aarch64-linux-android\24;c:\Dev\MagicFoundation\PlatformSDKs\Android\ndk\27.1.12297006\toolchains\llvm\prebuilt\windows-x86_64\sysroot\usr\lib\aarch64-linux-android
 
       c:\Program Files\Eclipse Adoptium\jdk-21.0.8.9-hotspot\bin\keytool.exe
       c:\Program Files\Eclipse Adoptium\jdk-21.0.8.9-hotspot\bin\jarsigner.exe
