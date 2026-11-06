@@ -1,6 +1,6 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<ns2:repository xmlns:ns2="http://schemas.android.com/repository/android/common/02" xmlns:ns3="http://schemas.android.com/repository/android/common/01" xmlns:ns4="http://schemas.android.com/repository/android/generic/01" xmlns:ns5="http://schemas.android.com/repository/android/generic/02" xmlns:ns6="http://schemas.android.com/sdk/android/repo/repository2/01" xmlns:ns7="http://schemas.android.com/sdk/android/repo/repository2/02" xmlns:ns8="http://schemas.android.com/sdk/android/repo/repository2/03" xmlns:ns9="http://schemas.android.com/sdk/android/repo/addon2/01" xmlns:ns10="http://schemas.android.com/sdk/android/repo/addon2/02" xmlns:ns11="http://schemas.android.com/sdk/android/repo/addon2/03" xmlns:ns12="http://schemas.android.com/sdk/android/repo/sys-img2/04" xmlns:ns13="http://schemas.android.com/sdk/android/repo/sys-img2/03" xmlns:ns14="http://schemas.android.com/sdk/android/repo/sys-img2/02" xmlns:ns15="http://schemas.android.com/sdk/android/repo/sys-img2/01">
-    <license id="android-sdk-license" type="text">Terms and Conditions
+<?xml version="1.0" encoding="UTF-8"?>
+<ns2:repository xmlns:ns2="http://schemas.android.com/repository/android/common/02" xmlns:ns3="http://schemas.android.com/repository/android/common/01" xmlns:ns4="http://schemas.android.com/repository/android/generic/01" xmlns:ns5="http://schemas.android.com/repository/android/generic/02" xmlns:ns6="http://schemas.android.com/sdk/android/repo/repository2/04" xmlns:ns7="http://schemas.android.com/sdk/android/repo/repository2/01" xmlns:ns8="http://schemas.android.com/sdk/android/repo/repository2/02" xmlns:ns9="http://schemas.android.com/sdk/android/repo/repository2/03" xmlns:ns10="http://schemas.android.com/sdk/android/repo/addon2/01" xmlns:ns11="http://schemas.android.com/sdk/android/repo/addon2/02" xmlns:ns12="http://schemas.android.com/sdk/android/repo/addon2/03" xmlns:ns13="http://schemas.android.com/sdk/android/repo/addon2/04" xmlns:ns14="http://schemas.android.com/sdk/android/repo/sys-img2/05" xmlns:ns15="http://schemas.android.com/sdk/android/repo/sys-img2/04" xmlns:ns16="http://schemas.android.com/sdk/android/repo/sys-img2/03" xmlns:ns17="http://schemas.android.com/sdk/android/repo/sys-img2/02" xmlns:ns18="http://schemas.android.com/sdk/android/repo/sys-img2/01">
+  <license id="android-sdk-license" type="text">Terms and Conditions
 
 This is the Android Software Development Kit License Agreement
 
@@ -34,7 +34,7 @@ This is the Android Software Development Kit License Agreement
 
 3.3 You agree that Google or third parties own all legal right, title and interest in and to the SDK, including any Intellectual Property Rights that subsist in the SDK. "Intellectual Property Rights" means any and all rights under patent law, copyright law, trade secret law, trademark law, and any and all other proprietary rights. Google reserves all rights not expressly granted to you.
 
-3.4 You may not use the SDK for any purpose not expressly permitted by the License Agreement. Except to the extent required by applicable third party licenses, you may not copy (except for backup purposes), modify, adapt, redistribute, decompile, reverse engineer, disassemble, or create derivative works of the SDK or any part of the SDK.
+3.4 You may not use the SDK for any purpose not expressly permitted by the License Agreement.  Except to the extent required by applicable third party licenses, you may not copy (except for backup purposes), modify, adapt, redistribute, decompile, reverse engineer, disassemble, or create derivative works of the SDK or any part of the SDK.
 
 3.5 Use, reproduction and distribution of components of the SDK licensed under an open source software license are governed solely by the terms of that open source software license and not the License Agreement.
 
@@ -94,7 +94,11 @@ This is the Android Software Development Kit License Agreement
 
 9.2 If you want to terminate the License Agreement, you may do so by ceasing your use of the SDK and any relevant developer credentials.
 
-9.3 Google may at any time, terminate the License Agreement with you if: (A) you have breached any provision of the License Agreement; or (B) Google is required to do so by law; or (C) the partner with whom Google offered certain parts of SDK (such as APIs) to you has terminated its relationship with Google or ceased to offer certain parts of the SDK to you; or (D) Google decides to no longer provide the SDK or certain parts of the SDK to users in the country in which you are resident or from which you use the service, or the provision of the SDK or certain SDK services to you by Google is, in Google's sole discretion, no longer commercially viable.
+9.3 Google may at any time, terminate the License Agreement with you if:
+(A) you have breached any provision of the License Agreement; or
+(B) Google is required to do so by law; or
+(C) the partner with whom Google offered certain parts of SDK (such as APIs) to you has terminated its relationship with Google or ceased to offer certain parts of the SDK to you; or
+(D) Google decides to no longer provide the SDK or certain parts of the SDK to users in the country in which you are resident or from which you use the service, or the provision of the SDK or certain SDK services to you by Google is, in Google's sole discretion, no longer commercially viable.
 
 9.4 When the License Agreement comes to an end, all of the legal rights, obligations and liabilities that you and Google have benefited from, been subject to (or which have accrued over time whilst the License Agreement has been in force) or which are expressed to continue indefinitely, shall be unaffected by this cessation, and the provisions of paragraph 14.7 shall continue to apply to such rights, obligations and liabilities indefinitely.
 
@@ -140,20 +144,21 @@ This is the Android Software Development Kit License Agreement
 14.7 The License Agreement, and your relationship with Google under the License Agreement, shall be governed by the laws of the State of California without regard to its conflict of laws provisions. You and Google agree to submit to the exclusive jurisdiction of the courts located within the county of Santa Clara, California to resolve any legal matter arising from the License Agreement. Notwithstanding this, you agree that Google shall still be allowed to apply for injunctive remedies (or an equivalent type of urgent legal relief) in any jurisdiction.
 
 
-January 16, 2019</license>
-    <localPackage path="extras;android;m2repository" obsolete="false">
-        <type-details xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns11:extraDetailsType">
-            <vendor>
-                <id>android</id>
-                <display>Android</display>
-            </vendor>
-        </type-details>
-        <revision>
-            <major>47</major>
-            <minor>0</minor>
-            <micro>0</micro>
-        </revision>
-        <display-name>Android Support Repository</display-name>
-        <uses-license ref="android-sdk-license"/>
-    </localPackage>
+January 16, 2019
+</license>
+  <localPackage path="extras;android;m2repository" obsolete="false">
+    <type-details xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns13:extraDetailsType">
+      <vendor>
+        <id>android</id>
+        <display>Android</display>
+      </vendor>
+    </type-details>
+    <revision>
+      <major>47</major>
+      <minor>0</minor>
+      <micro>0</micro>
+    </revision>
+    <display-name>Android Support Repository</display-name>
+    <uses-license ref="android-sdk-license" />
+  </localPackage>
 </ns2:repository>
